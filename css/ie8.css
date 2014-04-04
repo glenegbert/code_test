@@ -1,0 +1,11 @@
+section#feature_area div.inner div.slideDeck div#posters a.openModal{height:223px;width:337px;display:block;}
+
+section#focus_area div#bullet_points img#arc-a,
+section#focus_area div#bullet_points img#arc-b,
+section#focus_area div#bullet_points img#arc-c,
+section#focus_area div#bullet_points img#arc-d { display:inline;}
+
+section#goodies_area div.col-a ul#app_icons li img { display:inline;}
+section#testimony_area img#quote_img_b { display:none;}
+section#pricing_table div#pricing_grid_header div.pricing_tab { top:0;}
+section#teacher_quote blockquote { opacity:1;}

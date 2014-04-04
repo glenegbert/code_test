@@ -1,0 +1,931 @@
+/*------------------ Reset CSS ------------------- */
+html { overflow-y:scroll; height:100%;overflow: hidden; }
+body { height:100%; overflow: auto; }
+body, button, dd, div, dl, dt, fieldset, form, input, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, textarea, ul { margin:0; padding:0; }
+body, h1, h2, h3, h4, h5, h6 { font:300 13px/1.5 'Open Sans', sans-serif; }
+button, input { color:#555555; font:300 13px 'Open Sans', sans-serif; }
+table { border-collapse:collapse; border-spacing:0; font:inherit; }
+fieldset, img { border:none; }
+address, caption, cite, code, em, th, h1, h2, h3, h4, h5, h6 { font-style:normal; font-weight:600; }
+caption, th { text-align:left; }
+ol, ul, li { list-style:none; text-indent:0; }
+button, input[type="button"], input[type="submit"] { overflow:visible; cursor:pointer; }
+button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner { border:none; margin:0; outline:none; padding:0; }
+button:focus, button:active, input:focus, input:active { outline:none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; margin:0; padding:0; }
+/*--------------- Links -------------------- */
+a { text-decoration:none; }
+p a, p .link, a:hover, a:active, a:focus, a.underline, button.underline { text-decoration:underline; }
+.link { -webkit-appearance:none; background:none; border:0; -webkit-box-shadow:none; box-shadow:none; color:#445708; cursor:pointer; padding:0; text-decoration:none; text-align:left; }
+.link:active,
+.link:hover,
+.link:focus { text-decoration:underline; }
+/*------------------------------------------- */
+/*--------------- Type defaults -------------------- */
+/* Other type elements */
+strong,
+b { font-weight:bold; }
+cite,
+em,
+i { font-style:italic; }
+.thin { font-weight:300; }
+.light-bold { font-weight:500; }
+.semi-bold { font-weight:600; }
+.bold { font-weight:700; }
+.italic { font-style:italic; }
+.slightSpace { letter-spacing:.05em; }
+.spaced { letter-spacing:.2em; }
+/********************************************************************************/
+/****************************************
+	Responsive Show/Hide classes
+****************************************/
+/* IE 7 */
+.r .show768,
+.r .show480,
+.r .show320 { *display:none !important; }
+/* IE 8 */
+@media \0screen {
+	.r .show768,
+	.r .show480,
+	.r .show320 { display:none\0/ !important; }
+}
+/* Large Screen */
+@media only screen and (min-width:1006px) {
+	.r .show768,
+	.r .show480:not(.hide768),
+	.r .show320:not(.hide768):not(.hide480),
+	.r .show768.hide480.show320 { display:none !important; }
+}
+/* Not Large Screen */
+@media only screen and (max-width:1005px) {
+	.r body #GlobalWrpr { min-width:320px; padding:0; width:auto; }
+}
+/* iPad Portait */
+@media only screen and (min-width:768px) and (max-width:1005px) {
+	.r .hide768,
+	.r .show480:not(.show768),
+	.r .show320:not(.show768) { display:none !important; }
+}
+/* iPhone Landscape */
+@media only screen and (min-width:480px) and (max-width:767px) {
+	.r body { -webkit-text-size-adjust:none; }
+	.r .hide768:not(.show480),
+	.r .hide480,
+	.r .show320:not(.show480) { display:none !important; }
+}
+/* iPhone Portrait */
+@media only screen and (max-width:479px) {
+	.r body { -webkit-text-size-adjust:none; }
+	.r .hide768:not(.show480):not(.show320),
+	.r .hide480:not(.show320),
+	.r .hide320 { display:none !important; }
+}
+
+/****************************************
+	Helper Classes
+****************************************/
+
+* html .clearfix, *:first-child+html .clearfix { display:block; zoom:1; }
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+img { max-width:100%; }
+
+body{background:#fff;padding:0;margin:0;font-family:'Open Sans',Arial,Helvetica,Tahoma,sans-serif;font-size:12px;line-height:1.33em;font-weight:400;color:#555;-webkit-font-smoothing: antialiased;}
+
+::-moz-selection{background-color:#9cc957;}
+::selection{background-color:#9cc957;}
+
+form{margin:0;padding:0;border:0;}
+form button{border:0;outline:0;padding:0;margin:0;cursor:pointer;}
+form input:focus, form textarea:focus, form select:focus{outline: #8dc63f auto 5px;}
+  
+nav#fixed_nav{border-bottom:1px solid #666;height:auto;padding:24px 0 23px;background:#8dc63f url(//www.masteryconnect.com/learn-more/im/green_band.jpg) repeat center center;position:fixed;top:-100px;left:0;z-index:50;width:100%;}
+nav#fixed_nav div#links{float:right;width:75%;}
+nav#fixed_nav div#links a{text-shadow:0 -1px 0 rgba(0,0,0,.5);float:left;margin:11px 0 11px 30px;color:#FFF;font-size:17px;font-weight:600;text-decoration:none;line-height:30px;transition:color 0.3s;-webkit-transition:color 0.3s}
+nav#fixed_nav div#links a:hover{color:#CCC;}
+
+header{border-top:10px solid #333;height:92px;padding:43px 0 0;background-color:#fff;text-align:center;margin:0;}
+header nav{width:978px;margin:0 auto;text-align:left;}
+header nav h1{padding:0;float:left;width:273px;height:42px;overflow:hidden;text-indent:-9999px;margin:0;background: url(//www.masteryconnect.com/learn-more/im/mc_logo.png);}
+header nav .links { float:left; margin-left:12px;}
+header nav .links ul { float:left; list-style-type:none; }
+header nav .links ul li { float:left; }
+header nav .links a, header nav a.login {float:left;margin:12px 0 12px 30px;color:#555;font-size:17px;font-weight:400;text-decoration:none;line-height:30px;transition:color 0.3s;-webkit-transition:color 0.3s}
+header nav a.login { font-size:13px; font-weight:700;}
+header nav a:hover{color:#333;}
+header nav .teacherLogin { float:right; }
+  
+div.inner{width:978px;margin:0 auto;text-align:left;}
+
+div.clear_fix{clear:both;}
+div.clear_fix:after { clear:both; content:"."; display:block; height:0; visibility:hidden; }
+
+section div.centered{width:100%;text-align:center;}
+
+*.caps{text-transform:uppercase;}
+
+body *.right{float:right;}
+body *.left{float:left;}
+body *.none{float:none;}
+
+*.green{color:#8dc63f;}
+
+* a.bs{color:#6fa3d3;text-decoration:none;}
+
+* a.sml_sq_btn{height:24px;background:url(//www.masteryconnect.com/learn-more/im/sml_grey_square_button_left.png) no-repeat top left;display:block;padding-left:6px;font-size:10px;line-height:24px;font-weight:700;text-transform:uppercase;font-style:normal;color:#555;text-shadow:0 1px 0 #fff;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;}
+* a.sml_sq_btn span{padding:0 14px 0 8px;background:url(//www.masteryconnect.com/learn-more/im/sml_grey_square_button_right.png) no-repeat top right;float:left;display:block;}
+* a.sml_sq_btn:hover{color:#333; text-decoration:none;}
+a.sml_sq_btn { text-decoration:none; cursor:pointer; }
+
+* a.sq_btn{height:30px;background:url(//www.masteryconnect.com/learn-more/im/grey_square_button_left.png) no-repeat top left;display:block;padding-left:10px;font-size:12px;font-weight:700;text-transform:uppercase;font-style:normal;color:#555;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;}
+* a.sq_btn span{padding-right:10px;background:url(//www.masteryconnect.com/learn-more/im/grey_square_button_right.png) no-repeat top right;float:left;display:block;}
+* a.sq_btn:hover{color:#333;}
+a.sq_btn { text-decoration:none; cursor:pointer;}
+
+*.drk_gry_rnd_btn{
+	height:45px;
+	background:#444;
+	display:block;
+	padding:0 40px;
+	text-shadow:0 1px 1px rgba(0,0,0,.6);
+	font-size:16px;
+	line-height:45px;
+	font-weight:700;
+	text-transform:uppercase;
+	font-style:normal;
+	color:#FFF;
+	text-decoration:none;
+	transition:color 0.3s;
+	-webkit-transition:color 0.3s;
+	-webkit-border-radius: 26px;
+	-moz-border-radius: 26px;
+	border-radius: 26px;
+	letter-spacing:0.2em;
+	}
+
+*.drk_gry_rnd_btn.sml{height:40px;width:143px;padding:0 20px; text-align:center;color:#eee;letter-spacing:0.175em;font-size:12px;line-height:40px;-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;}
+*.drk_gry_rnd_btn:hover{color:#ccc; text-decoration:none;}
+a.drk_gry_rnd_btn { text-decoration:none; cursor:pointer;}
+#home *.drk_gry_rnd_btn, #fixed_nav *.drk_gry_rnd_btn, #features *.drk_gry_rnd_btn { background:#eaa443; 
+	border:2px solid rgba(0, 0, 0, .5);
+	background-image: -moz-linear-gradient(top, #edb15d, #e4902f);
+	background-image: -ms-linear-gradient(top, #edb15d, #e4902f);
+	background-image: -o-linear-gradient(top, #edb15d, #e4902f);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#edb15d), to(#e4902f));
+	background-image: -webkit-linear-gradient(top, #edb15d, #e4902f);
+	background-image: linear-gradient(top, #edb15d, #e4902f);
+}
+.ie9 .home *.drk_gry_rnd_btn, .ie9 #fixed_nav *.drk_gry_rnd_btn {background:#eaa443; border:2px solid rgba(31, 37, 22, .7);}
+#home *.drk_gry_rnd_btn:hover { color:#f3f3f3; }
+
+*.med_gry_rnd_btn{height:37px;background:url(//www.masteryconnect.com/learn-more/im/medium_grey_rounded_button_left.png) no-repeat top left;display:block;padding-left:21px;font-size:12px;font-style:normal;line-height:37px;font-weight:700;text-transform:uppercase;color:#333;text-decoration:none;text-shadow:0 1px 0 #fff;transition:color 0.3s;-webkit-transition:color 0.3s;margin:25px 45px 0 0;}
+*.med_gry_rnd_btn span{height:37px;display:block;background:url(//www.masteryconnect.com/learn-more/im/medium_grey_rounded_button_right.png) no-repeat top right;padding:0 40px 0 19px;}
+*.med_gry_rnd_btn:hover{color:#111; text-decoration:none;}
+a.med_gry_rnd_btn { text-decoration:none; cursor:pointer;}
+
+*.lte_gry_rnd_btn{height:33px;background:url(//www.masteryconnect.com/learn-more/im/grey_rounded_button_left.png) no-repeat top left;display:block;padding-left:18px;font-size:12px;font-style:normal;line-height:33px;font-weight:700;text-transform:uppercase;color:#555;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;float:left;}
+*.lte_gry_rnd_btn span{height:33px;display:block;background:url(//www.masteryconnect.com/learn-more/im/grey_rounded_button_right.png) no-repeat top right;padding:0 30px 0 11px;}
+*.lte_grn_rnd_btn{height:60px;text-decoration:none;background:url(//www.masteryconnect.com/learn-more/im/green_rounded_button_left.png) no-repeat top left;display:block;padding-left:31px;font-size:15px;font-style:normal;line-height:60px;font-weight:700;text-transform:uppercase;color:#fff;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;float:left;text-shadow: 0 1px 1px rgba(0,0,0,.4);}
+*.lte_grn_rnd_btn:hover { text-decoration:none;}
+*.lte_grn_rnd_btn span{height:60px;display:block;background:url(//www.masteryconnect.com/learn-more/im/green_rounded_button_right.png) no-repeat top right;padding:0 40px 0 11px;}
+*.vry_lrg_gry_rnd_btn {height:33px;background:#f0f0f0;border-radius:15px;border:1px solid #bbb;display:block;padding-left:19px;font-size:12px;font-style:normal;line-height:33px;font-weight:700;text-transform:uppercase;color:#555;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;}
+*.vry_lrg_gry_rnd_btn.dark {background:#ddd;}
+*.vry_lrg_gry_rnd_btn.darker {background:#bbb; border:1px solid #777; color:#fff; }
+*.vry_lrg_gry_rnd_btn span{height:33px;display:block;padding:0 30px 0 11px; text-align:center;}
+
+*.lte_gry_rnd_btn:hover{color:#333; text-decoration:none;}
+*.lte_grn_rnd_btn:hover{}
+a.lte_gry_rnd_btn { text-decoration:none; cursor:pointer;}
+
+span.gc-cs-link{color:inherit;text-decoration:inherit;}
+
+section div.col-b hr{width:100%;border:0;border-top:1px solid #ddd;height:0;float:left;clear:both;margin:30px 0;}
+  
+section#feature_area {min-height:130px;background:#8dc63f url(//www.masteryconnect.com/learn-more/im/green_band.jpg) repeat center top;padding:55px 0;border-bottom:1px solid #ddd;}
+section#feature_area.home { height:320px; padding:70px 0 0;}
+section#feature_area.home .joinFree { margin-top:25px;}
+section#feature_area h2{font-weight:700;color:#fff;font-size:58px;text-shadow:0 0 5px #464646;margin:0;padding:0;line-height:68px;float:left;width:100%;text-align:center;}
+section#feature_area h2.longtext{font-size:52px;}
+section#feature_area.home h2 { text-align:left;}
+section#feature_area h4 b{font-weight:600;}
+section#feature_area hr{border:0;height:0;width:100%;float:left;clear:both;margin:20px 0;}
+section#feature_area p{font-size:.83em;font-style:normal;letter-spacing:0.2em;font-weight:400;color:#fff;text-shadow:0 0 5px #464646;margin:6px 0;padding:0;line-height:20px;width:100%;text-align:center;}
+#features section#feature_area p { text-align:center; width:65%; float:none; margin:5px auto;}
+section#feature_area div.col-a{width:57.25%;float:left;margin-bottom:40px;}
+section#feature_area p b{font-weight:600; color:#f5f591;}
+section#feature_area h3{font-weight:700;color:#fff;font-size:50px;text-shadow:0 0 5px #464646;margin:0 0 18px;padding:0;line-height:68px;float:left;width:100%;text-align:left;}
+section#feature_area h3.solutiontree{background:url(//www.masteryconnect.com/learn-more/im/st_logo_white.png) no-repeat 75% 10px;}
+section#feature_area h4{font-weight:400;color:#fff;font-size:16px;text-shadow:0 0 5px #464646;margin:9px 0 25px;padding:0;line-height:28px;float:left;width:100%;text-align:center;}
+section#feature_area h4 b{font-weight:600; color:#f5f591;}
+section#feature_area hr, body#features section#feature_area hr{border:0;height:0;width:100%;float:left;clear:both;margin:20px 0;}
+section#feature_area p{font-size:1.1em;font-style:normal;letter-spacing:0em;font-weight:400;color:#fff;text-shadow:0 0 5px #464646;margin:0 0 0 32px; padding:0;line-height:20px;width:300px;float:left;text-align:left;}
+section#feature_area .getStarted { width:285px; margin:0 auto; }
+#features .getStarted *.drk_gry_rnd_btn { width:200px; }
+section#feature_area .getStarted p { margin:5px 0 0 0; }
+body#get-started section#feature_area h3 { text-align:center;}
+body#pricing section#feature_area a#pointer_down{margin-left:476px;}
+body#jobs section#feature_area{padding-bottom:0;}
+body#jobs section#feature_area div.inner{background:url(//www.masteryconnect.com/learn-more/im/mountains.png) no-repeat center bottom;height:280px;}
+
+body#thank-you section#feature_area{height:150px;}
+body#goodies section#feature_area h2{font-size:56px;}
+body#purchase-bubblescore section#feature_area h3,body#get-started section#feature_area h3{font-size:38px;line-height:42px;}
+body#purchase-bubblescore section#feature_area h3{text-align:center;}
+
+section#feature_area .slideDeck { position:relative; float:right; }
+section#feature_area #posters{border:14px solid #fff;width:337px;height:223px;-moz-box-shadow:0 0 5px 0 #333;-webkit-box-shadow: 0 0 5px 0 #333;box-shadow:0 0 5px 0 #333;}
+section#feature_area #pager{position:absolute; bottom:-15px; left:158px; width:64px;}
+section#feature_area #pager a{width:6px;height:6px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius:3px;background-color:#fff;float:left;display:block;margin-right:6px;-moz-box-shadow:0 0 1px 0 #555;-webkit-box-shadow: 0 0 1px 0 #555;box-shadow:0 0 1px 0 #555;}
+section#feature_area #pager a.activeSlide{background-color:#b5d485;}
+        
+section#focus_area{background-color:#f5f5f5;padding:90px 0;border-bottom:1px solid #ddd;}
+section#focus_area h3{padding:0;margin:0;font-size:20px;line-height:34px;text-align:center;font-weight:700;}
+section#focus_area p{font-size:14px;line-height:1.8725em;text-align:center;margin:6px 0;}
+body#contest section#focus_area p{margin:12px auto 6px;width:600px;}
+body#contest section#focus_area p a{color:#6ca70f;text-decoration:none;font-weight:600;}
+body#contest section#focus_area img#pin_contest_icon{margin: 0 0 24px 442px}
+section#focus_area canvas{width:100%;height:100px;margin:16px 0;padding:0;}
+section#focus_area div#bullet_points{width:100%;height:100px;margin:24px 0;padding:0;position:relative;}
+section#focus_area div#bullet_points img{position:absolute;display:none;}
+section#focus_area div#bullet_points img#arc-a{top:0;left:148px;}
+section#focus_area div#bullet_points img#arc-b{top:0;left:378px;}
+section#focus_area div#bullet_points img#arc-c{top:0;left:525px;}
+section#focus_area div#bullet_points img#arc-d{top:0;left:677px;}
+section#focus_area ul#blt_items{width:100%;list-style:none;padding:0;margin:0;}
+section#focus_area ul#blt_items li{width:23%;padding:68px 0 0;margin:0;float:left;margin-right:2.66%;text-align:center;line-height:2em;}
+section#focus_area ul#blt_items li b{font-weight:600;}
+section#focus_area ul#blt_items li#blt_masterytracking{background: url(//www.masteryconnect.com/learn-more/im/tracker_icon.png) no-repeat center 10px;}
+section#focus_area ul#blt_items li#blt_resourcepins{background: url(//www.masteryconnect.com/learn-more/im/pins_icon.png) no-repeat center top;}
+section#focus_area ul#blt_items li#blt_assessmentsharing{background: url(//www.masteryconnect.com/learn-more/im/assessments_icon.png) no-repeat center 2px;}
+section#focus_area ul#blt_items li#blt_timesavinggradingtools{background: url(//www.masteryconnect.com/learn-more/im/devices_icon.png) no-repeat center 2px;margin-right:0;}
+
+section#counter_area { padding:120px 0;border-bottom:1px solid #ddd; }
+section#counter_area #counters_container { margin:15px 0 35px 0;}
+section#counter_area .counter_holder { width:430px; margin:0 auto; float:none; }
+section#counter_area h3{padding:0;margin:0 0 10px 0;font-size:20px;line-height:34px;text-align:center;font-weight:700;}
+section#counter_area p{font-size:14px;line-height:1.8725em;text-align:center;margin:0 auto; width:685px; }
+
+section#goodies_area{padding:120px 0;border-bottom:1px solid #ddd;}
+section#goodies_area div.col-a{width:32%;float:left;}
+section#goodies_area div.col-a ul#app_icons{padding:0;margin:24px 0 0;list-style:none;width:100%;}
+section#goodies_area div.col-a ul#app_icons li{list-style:none;display:block;float:left;height:72px;width:62px;}
+section#goodies_area div.col-a ul#app_icons.three-across li{margin-left:12px;}
+section#goodies_area div.col-a ul#app_icons li img{display:none;}
+section#goodies_area div.col-b{width:50%;margin:70px 9% 0;float:right;text-align:center;}
+section#goodies_area div.col-b h3{font-weight:700;font-size:20px;margin:0;padding:0;line-height:62px;float:left;width:100%;text-align:center;}
+section#goodies_area div.col-b p{font-size:14px;line-height:1.8725em;text-align:center;margin:6px 0 32px;}    
+section#goodies_area div.col-b a.lte_gry_rnd_btn{margin-left:33%;}
+    
+section#testimony_area{background-color:#f5f5f5;padding:90px 0;border-bottom:1px solid #ddd;}
+section#testimony_area div.col-a{width:57.25%;float:left;margin-left:5%;padding-top:32px;}
+section#testimony_area h3{font-weight:700;font-size:20px;margin:0;padding:0;line-height:62px;float:left;width:100%;text-align:center;}
+section#testimony_area blockquote{text-align:center;font-size:14px;line-height:1.8725em;padding:0;margin:0;}
+section#testimony_area blockquote b{font-weight:600;}
+section#testimony_area div#quote_img{float:right;width:235px;height:264px;margin-right:5%;display:inline;position:relative;}
+section#testimony_area img#quote_img_a{position:absolute;top:0;left:0;}
+section#testimony_area img#quote_img_b{position:absolute;top:0;left:0;}
+    
+section#writeup_area{padding:120px 0;border-bottom:1px solid #ddd;}
+section#writeup_area h3{padding:0;margin:0;font-size:20px;line-height:34px;text-align:center;font-weight:700;}
+section#writeup_area p{font-size:14px;line-height:1.8725em;text-align:center;}    
+section#writeup_area div.quote_sec{width:32%;padding:90px 0 0;margin-right:2%;float:left;height:225px;position:relative;}
+section#writeup_area div.quote_sec.last{margin-right:0;}
+section#writeup_area div.quote_sec blockquote{margin:0;padding:100px 0 0;text-align:center;line-height:2em;}
+section#writeup_area div.quote_sec blockquote#edsurge{background:url(//www.masteryconnect.com/learn-more/im/edsurge_logo.gif) no-repeat center top;}
+section#writeup_area div.quote_sec blockquote#techcrunch{background:url(//www.masteryconnect.com/learn-more/im/techcrunch_logo.gif) no-repeat center 32px;}
+section#writeup_area div.quote_sec blockquote#thejournal{background:url(//www.masteryconnect.com/learn-more/im/thejournal_logo.gif) no-repeat center top;}
+section#writeup_area div.quote_sec a.readmore{color:#6ca70f;text-decoration:none;width:100%;text-align:center;font-weight:600;position:absolute;bottom:0;left:0;}
+
+section.feature_bank div.inner{padding:90px 0;border-bottom:3px solid #ccc;}
+section.feature_bank div.col-a{width:335px;float:left;}
+section.feature_bank div.col-b{width:643px;float:left;}
+section.feature_bank div.col-b div.feature_block{float:left;width:300px;margin-top:45px;}
+section.feature_bank div.col-b div.feature_block.col1{margin-right:35px;}
+section.feature_bank div.col-b div.feature_block.col2{margin-right:8px;}
+section.feature_bank div.col-b div.feature_block p{width:256px;float:right;margin:0;padding:0;font-weight:400;line-height:1.66em;}
+section.feature_bank div.col-b div.feature_block p b{font-weight:600;text-transform:uppercase;}
+section.feature_bank div.col-b div.feature_block i{float:left;display:block;width:40px;height:40px;overflow:hidden;background: url(//www.masteryconnect.com/learn-more/im/features-sprite.png) no-repeat 0 0;}
+section.feature_bank hr{border:0;height:0;width:100%;float:left;clear:both;margin:12px 0;}
+
+section.feature_bank div.col-a h3{font-size:1.66em;line-height:1.5em;float:left;clear:both;margin:0;padding:0; font-weight:700;}
+section.feature_bank div.col-a img.porthole{float:left;clear:both;margin-top:96px;}
+section.feature_bank div.col-a .screens { float:left; margin:10px 0 0 23px; clear:both; color:#666; }
+section.feature_bank div.col-a .screens .porthole { background:url(//www.masteryconnect.com/learn-more/im/shot.jpg); width:19px; height:13px; display:inline-block; position:relative; top:3px; }
+aside.modalContainer .content .screenshots .img_wrapper { height:520px; width:786px; margin:0 auto; cursor:pointer; }
+aside.modalContainer .content .screenshots .img_wrapper img { height:495px; border:1px solid #ccc; padding:3px; margin:10px 0; }
+aside.modalContainer .content .screenshots .img_wrapper { position:relative; }
+aside.modalContainer .content .screenshots .img_wrapper:not(:first-child) { display:none; }
+aside.modalContainer .content .screenshots .img_wrapper #prev {font-size:35px; line-height:55px; display:block; position:absolute; top:255px; width:20px; height:55px; left:-35px; border:1px solid #eaeaea; border-radius:5px; color:#bbb; padding:0 5px; }
+aside.modalContainer .content .screenshots .img_wrapper #next {font-size:35px; line-height:55px; display:block; position:absolute; top:255px; width:20px; height:55px	; right:-35px; border:1px solid #eaeaea; border-radius:5px; color:#bbb; padding:0 5px; }
+aside.modalContainer .content .screenshots .thumbs { width:100%; float:left; padding:10px 0; background:#fff; border-top:1px solid #ddd; }
+aside.modalContainer .content .screenshots .thumbs ul { margin:0 0 0 10px;}
+aside.modalContainer .content .screenshots .thumbs ul li { float:left; width:150px; padding:5px 12px; border:1px solid #999; margin:0 5px;  cursor:pointer; position:relative; opacity:.4; margin-bottom:10px; }
+aside.modalContainer .content .screenshots .thumbs ul li.selected { opacity:1; padding:2px 9px; border:3px solid #8dc63f;}
+
+section.feature_bank div.col-b h4{font-size:1.2em;line-height:1.5em;padding:0;margin:0 0 15px 0; font-weight:700;}
+section.feature_bank div.col-b p{font-size:1.125em;line-height:2em;}
+
+section.feature_bank div.col-b div.feature_block p{font-size:1em;line-height:1.66em;}
+section.feature_bank div.col-b div.feature_block p b{font-weight:600;}
+    
+section.feature_bank div.col-b div.feature_block.sprite1 i{background-position:0 0;}
+section.feature_bank div.col-b div.feature_block.sprite2 i{background-position:-40px 0;}
+section.feature_bank div.col-b div.feature_block.sprite3 i{background-position:-80px 0;}
+section.feature_bank div.col-b div.feature_block.sprite4 i{background-position:-120px 0;}
+section.feature_bank div.col-b div.feature_block.sprite5 i{background-position:-160px 0;}
+section.feature_bank div.col-b div.feature_block.sprite6 i{background-position:-200px 0;}
+section.feature_bank div.col-b div.feature_block.sprite7 i{background-position:-240px 0;}
+section.feature_bank div.col-b div.feature_block.sprite8 i{background-position:-280px 0;}
+section.feature_bank div.col-b div.feature_block.sprite9 i{background-position:-320px 0;}
+section.feature_bank div.col-b div.feature_block.sprite10 i{background-position:-360px 0;}
+section.feature_bank div.col-b div.feature_block.sprite11 i{background-position:0 -40px;}
+section.feature_bank div.col-b div.feature_block.sprite12 i{background-position:-40px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite13 i{background-position:-80px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite14 i{background-position:-120px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite15 i{background-position:-160px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite16 i{background-position:-200px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite17 i{background-position:-240px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite18 i{background-position:-280px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite19 i{background-position:-320px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite20 i{background-position:-360px -40px;}
+section.feature_bank div.col-b div.feature_block.sprite21 i{background-position:0 -80px;}
+section.feature_bank div.col-b div.feature_block.sprite22 i{background-position:-40px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite23 i{background-position:-80px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite24 i{background-position:-120px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite25 i{background-position:-160px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite26 i{background-position:-200px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite27 i{background-position:-240px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite28 i{background-position:-280px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite29 i{background-position:-320px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite30 i{background-position:-360px -80px;}
+section.feature_bank div.col-b div.feature_block.sprite31 i{background-position:0 -120px;}
+section.feature_bank div.col-b div.feature_block.sprite32 i{background-position:-40px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite33 i{background-position:-80px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite34 i{background-position:-120px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite35 i{background-position:-160px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite36 i{background-position:-200px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite37 i{background-position:-240px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite38 i{background-position:-280px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite39 i{background-position:-320px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite40 i{background-position:-360px -120px;}
+section.feature_bank div.col-b div.feature_block.sprite41 i{background-position:0 -160px;}
+
+section#pricing_table{background-color:#f5f5f5;padding:30px 0 70px;border-bottom:1px solid #ddd;}
+section#pricing_table table#pricing_grid{width:100%;border:0;margin:0 0 20px;padding:0;float:left;clear:both;}
+section#pricing_table table#pricing_grid td{width:23%;text-align:center;border-bottom:1px solid #ddd;height:30px;line-height:30px;font-size:1.1em;color:#333;font-weight:400;font-style:italic;}
+section#pricing_table table#pricing_grid td.feature{width:31%;text-align:left;font-style:normal;}
+section#pricing_table table#pricing_grid td.feature em{font-size:0.9em;font-style:italic;font-weight:300;}
+section#pricing_table table#pricing_grid td.checked{background: url(//www.masteryconnect.com/learn-more/im/tick.png) no-repeat center center;}
+section#pricing_table table#pricing_grid tr.button_row td{padding:20px 0 60px;}
+section#pricing_table table#pricing_grid tr.button_row td a.lte_gry_rnd_btn{margin-left:60px;}
+section#pricing_table p.notes{padding:0;margin:20px 0 0;font-size:0.83em;line-height:2.5em;font-weight:400;font-style:italic;}
+section#pricing_table div#pricing_grid_header{width:100%;height:185px;float:left;clear:both;border-bottom:5px solid #666;position:relative;overflow:hidden;}
+section#pricing_table div#pricing_grid_header.scrollingActive {width:978px; position:fixed; top:80px;left:230px; border:none;}
+section#pricing_table div#pricing_grid_header h2.scrollingActive { display:none;}
+section#pricing_table div#pricing_grid_header h2{float:left;font-size:1.1675em;margin:0;padding:0;position:absolute;left:0;bottom:15px;}
+section#pricing_table div#pricing_grid_header div.pricing_tab {width:200px;margin:0;text-align:center;height:168px;padding-top:41px;position:absolute;top:55px;}
+section#pricing_table div#pricing_grid_header div.pricing_tab.blank{right:47%;}
+section#pricing_table div#pricing_grid_header div.pricing_tab.teacher{right:24%;}
+section#pricing_table div#pricing_grid_header div.pricing_tab.school{right:1%;}
+section#pricing_table div#pricing_grid_header div.pricing_tab.teacher h3, section#pricing_table div#pricing_grid_header div.pricing_tab.school h3 { background:#8fc742;}
+section#pricing_table div#pricing_grid_header div.pricing_tab h3{font-size:1.5em;font-weight:600;padding:15px 0; line-height:1.25em; border-radius:10px 10px 0 0; background:#fc9218; color:#fff;}
+section#pricing_table div#pricing_grid_header div.pricing_tab h4{font-size:0.85em;font-weight:400;padding:12px 0;margin:0; box-shadow:0 1px 11px #ddd; line-height:1.25em; background:#f5f5f5;}
+section#pricing_table div#pricing_grid_header div.pricing_tab h5 {background:#fff; padding:10px 0;box-shadow:0 1px 11px #ddd; width:200px; height:55px;}
+section#pricing_table div#pricing_grid_header div.pricing_tab a{margin:15px 40px; width:100px;}
+  
+section#teacher_quote{background-color:#fff;padding:90px 0;border-bottom:1px solid #ddd;}
+section#teacher_quote blockquote{font-size:3.1667em;line-height:1.68em; font-weight:300;font-style:normal;padding:0;margin:0 0 40px;float:left;clear:both;width:100%;}
+section#teacher_quote p{font-size:1.33em;line-height:1.55em; font-weight:300;font-style:normal;padding:0;margin:0;float:right;clear:both;text-align:right;width:100%;}
+section#teacher_quote p b{font-weight:600;}
+  
+section#pricing_questions{background-color:#f5f5f5;padding:90px 0;}
+section#pricing_questions div.col-a{width:34%;float:left;}
+section#pricing_questions div.col-b{width:66%;float:left;}
+section#pricing_questions div.col-a h3{padding:0;margin:0;font-size:1.66em;}
+section#pricing_questions div.col-b div.qa{float:left;clear:both;width:100%;padding-bottom:30px;border-bottom:1px solid #ddd;margin-bottom:30px;}
+section#pricing_questions div.col-b div.qa h4{font-size:1.15em;font-weight:600;padding:0;margin:0;}
+section#pricing_questions div.col-b div.qa p{font-size:1em;line-height:1.667em;padding:0;margin:1.667em 0 0; font-weight:400;}
+section#pricing_questions div.col-b div.qa p a{color:#6da611;text-decoration:none;}
+
+section#webinars_list{background-color:#f5f5f5;padding:90px 0 45px;}
+section#webinars_list div.col-a{width:34%;float:left;}
+section#webinars_list div.col-b{width:66%;float:left;}
+section#webinars_list div.col-a h3{padding:0;margin:0;font-size:1.66em;}
+section#webinars_list div.col-b h2{margin:0 0 6px;padding:0;font-size:2em;line-height:1em;font-weight:300;}
+section#webinars_list div.col-b h3{margin:6px 0;padding:0;font-size:1.1725em;line-height:1em;font-weight:600;}
+section#webinars_list div.col-b p{font-size:1em;padding:0;margin:12px 0;}
+section#webinars_list div.col-b p b{font-weight:600;}
+  
+section#webinars_list div.col-b div.event{float:left;clear:both;width:100%;padding-bottom:30px;border-bottom:1px solid #ddd;margin:15px 0;}
+section#webinars_list div.col-b div.event h4{font-size:1.0875em;font-weight:600;padding:0;margin:0;}
+section#webinars_list div.col-b div.event p{font-size:1em;line-height:1.667em;padding:0;margin:6px 0;}
+section#webinars_list div.col-b div.event p b{font-weight:600;}
+section#webinars_list div.col-b div.event p a{color:#6da611;text-decoration:none;}
+
+section#request_demo{background-color:#f5f5f5;padding:45px 0 90px 0;border-bottom:1px solid #ddd;}
+section#request_demo div.col-a{width:34%;float:left;}
+section#request_demo div.col-b{width:66%;float:left;}
+section#request_demo div.col-a h3{padding:0;margin:0;font-size:1.66em;}
+section#request_demo div.col-b h3{margin:0 0 6px;padding:0;font-size:1.1725em;line-height:1em;font-weight:600;}
+section#request_demo div.col-b p{font-size:1em;padding:0;margin:12px 0;}
+section#request_demo div.col-b p b{font-weight:600;}
+
+section#teacher_quotes{background-color:#fff;padding:90px 0;}
+section#teacher_quotes div.inner{text-align:center;}
+section#teacher_quotes h2{font-size:1.6667em;line-height:1em;padding:0;margin:0;text-transform:uppercase;}
+section#teacher_quotes div.quote{padding:75px 0 0;}
+section#teacher_quotes div.quote blockquote{font-size:1.6667em;line-height:1.7em;padding:0;margin:0;font-weight:300;font-style:italic;padding-bottom:30px;}
+section#teacher_quotes div.quote i{margin:0;padding:0;font-size:1.1675em;line-height:1.6667em;font-style:normal;font-weight:300;}
+section#teacher_quotes div.quote i b{font-size:1.15em;font-weight:400;}
+section#teacher_quotes div.hr{width:100%;height:1px;margin:75px 0 0;}
+section#teacher_quotes div.hr hr{border:0;border-top:1px solid #ddd;width:645px;margin:0 auto;}
+
+section#company_story{background-color:#f5f5f5;padding:90px 0;border-bottom:1px solid #ddd;}
+section#company_story div.col-a{width:34%;float:left;}
+section#company_story div.col-b{width:66%;float:left;}
+section#company_story div.col-a h3{padding:0 0 0 50px;margin:0;font-size:1.66em;line-height:2.5em;background:url(//www.masteryconnect.com/learn-more/im/jobs-sprites.png) no-repeat 0 0;}
+section#company_story div.col-b div.short_desc{float:left;clear:both;width:100%;}
+section#company_story div.col-b div.short_desc h3{font-size:1.15em;line-height:1.875em;font-weight:600;padding:0;margin:0;}
+section#company_story div.col-b div.short_desc p{font-size:1em;line-height:1.667em;padding:0;margin:1em 0;}
+section#company_story div.col-b div.short_desc ul{list-style:circle;padding:0;margin:0;}
+section#company_story div.col-b div.short_desc ul li{margin:0 0 0 16px;font-size:1em;line-height:1.667em;}
+section#company_story div.col-b div.short_desc a{color:#6da611;text-decoration:none;}
+
+section#company_culture{background-color:#fff;padding:90px 0;border-bottom:1px solid #ddd;}
+section#company_culture div.col-a{width:34%;float:left;}
+section#company_culture div.col-b{width:66%;float:left;}
+section#company_culture div.col-a h3{padding:0 0 0 50px;margin:0;font-size:1.66em;line-height:2.5em;background:url(//www.masteryconnect.com/learn-more/im/jobs-sprites.png) no-repeat 0 -100px;}
+section#company_culture div.col-b div.short_desc{float:left;clear:both;width:100%;}
+section#company_culture div.col-b div.short_desc h3{font-size:1.15em;line-height:1.875em;font-weight:600;padding:0;margin:0;}
+section#company_culture div.col-b div.short_desc p{font-size:1em;line-height:1.667em;padding:0;margin:1em 0;}
+section#company_culture div.col-b div.short_desc ul{list-style:circle;padding:0;margin:0;}
+section#company_culture div.col-b div.short_desc ul li{margin:0 0 0 16px;font-size:1em;line-height:1.667em;}
+section#company_culture div.col-b div.short_desc a{color:#6da611;text-decoration:none;}
+
+section#company_compensation{background-color:#f5f5f5;padding:90px 0;border-bottom:1px solid #ddd;}
+section#company_compensation div.col-a{width:34%;float:left;}
+section#company_compensation div.col-b{width:66%;float:left;}
+section#company_compensation div.col-a h3{padding:0 0 0 50px;margin:0;font-size:1.66em;line-height:2.5em;background:url(//www.masteryconnect.com/learn-more/im/jobs-sprites.png) no-repeat 0 -150px;}
+section#company_compensation div.col-b div.short_desc{float:left;clear:both;width:100%;}
+section#company_compensation div.col-b div.short_desc h3{font-size:1.15em;line-height:1.875em;font-weight:600;padding:0;margin:0;}
+section#company_compensation div.col-b div.short_desc p{font-size:1em;line-height:1.667em;padding:0;margin:1em 0;}
+section#company_compensation div.col-b div.short_desc ul{list-style:circle;padding:0;margin:0;}
+section#company_compensation div.col-b div.short_desc ul li{margin:0 0 0 16px;font-size:1em;line-height:1.667em;}
+section#company_compensation div.col-b div.short_desc a{color:#6da611;text-decoration:none;}
+
+section#company_openings{background-color:#FFF;padding:90px 0;border-bottom:1px solid #ddd;}
+section#company_openings div.col-a{width:34%;float:left;}
+section#company_openings div.col-b{width:66%;float:left;}
+section#company_openings div.col-a h3{padding:0 0 0 50px;margin:0;font-size:1.66em;line-height:2.5em;background:url(//www.masteryconnect.com/learn-more/im/jobs-sprites.png) no-repeat 0 -50px;}
+section#company_openings div.col-b div.position_department{float:left;clear:both;width:100%;}
+section#company_openings div.col-b div.position_department h3{font-size:1.15em;line-height:1.875em;font-weight:600;padding:0;margin:0 0 12px;}
+section#company_openings div.col-b div.position_department div.position{width:100%;font-size:1.0875em;line-height:1.875em;}
+section#company_openings div.col-b div.position_department div.position a.position_title{float:left;width:65%;text-align:left;color:#6ea723;text-decoration:none;}
+section#company_openings div.col-b div.position_department div.position a.position_location{float:left;width:35%;text-align:right;color:#555;text-decoration:none;}
+
+
+section#how_it_began{padding:90px 0;border-bottom:1px solid #ddd;}
+section#how_it_began h3{font-size:1.6667em;line-height:1em;margin:0 0 15px;padding:0;font-weight:700;}
+section#how_it_began p{font-size:1.15em;line-height:1.785em;width:60%;margin:0 auto;padding:0;}
+section#how_it_began div.col-a{float:left;display:block;width:35%;margin-left:13.75%;text-align:justify;}
+section#how_it_began div.col-b{float:right;display:block;width:35%;margin-right:13.75%;text-align:justify;}
+section#how_it_began div.col-a p,section#how_it_began div.col-b p{font-weight:400;font-size:1em;line-height:1.875em;width:100%;padding:0;margin:12px 0;text-align:justify;}
+section#how_it_began hr{border:0;background:transparent;height:0px;margin:30px 0;width:100%;float:left;clear:both;}
+
+
+section#resource_pins{background-color:#f5f5f5;padding:90px 0;border-bottom:1px solid #ddd;}
+section#resource_pins h3{font-size:1.6667em;line-height:1em;margin:0 0 15px;padding:0;font-weight:700;}
+section#resource_pins p{font-size:1.15em;line-height:1.785em;width:60%;margin:0 auto;padding:0;}
+section#resource_pins hr{border:0;background:transparent;height:0px;margin:30px 0;width:100%;float:left;clear:both;}
+section#resource_pins #resource_pins_description,section#resource_pins #resource_pins_description_chrome{float:right;width:307px;margin-top:90px;}
+section#resource_pins #resource_pins_description a,section#resource_pins #resource_pins_description_chrome a{color:#6da611;text-decoration:none;}
+section#resource_pins #resource_pins_description h3,section#resource_pins #resource_pins_description_chrome h3{font-size:1.15em;line-height:2em;font-weight:600;width:100%;}
+section#resource_pins #resource_pins_description p,section#resource_pins #resource_pins_description_chrome p{font-size:1em;line-height:1.667em;margin:1em 0;width:100%;}
+section#resource_pins #resource_pins_description h4,section#resource_pins #resource_pins_description_chrome h4{margin:1em 0;padding:0;float:left;clear:both;}
+section#resource_pins #resource_pins_description h4 img,section#resource_pins #resource_pins_description_chrome h4 img{float:left;margin-right:1em;}
+section#resource_pins #resource_pins_description h4 i,section#resource_pins #resource_pins_description_chrome h4 i{font-style:normal;font-size:1em;line-height:1.33em;font-weight:600;float:left;padding:0.5em 0;}
+
+section#apps{background-color:#fff;padding:90px 0;border-bottom:1px solid #ddd;}
+section#apps h3{font-size:1.6667em;line-height:1em;margin:0 0 15px;padding:0;font-weight:700;}
+section#apps p{font-size:1.15em;line-height:1.785em;width:60%;margin:0 auto;padding:0;}
+section#apps hr{border:0;background:transparent;height:0px;margin:30px 0;width:100%;float:left;clear:both;}
+section#apps #cc_app_ipad{margin:0 auto;}
+section#apps #cc_app_iphone{float:left;margin:86px 0 0 30px;}
+section#apps div#app_icons{width:895px;margin:0 auto;clear:both;}
+section#apps div#app_icons div.app_info{width:230px;height:365px;position:relative;margin-right:-12px;float:left;text-align:center;}
+section#apps div#app_icons div.app_info h5 { margin:0 0 8px 0;}
+section#apps div#app_icons div.app_info a { position:relative; display:inline-block; height:65px; }
+section#apps div#app_icons div.app_info a:after { position:absolute; bottom:5px; left:0; color:#666; text-decoration:none; }
+section#apps div#app_icons div.app_info a.apple:hover:after{content:" Apple"; text-align:center; left:4px; }
+section#apps div#app_icons div.app_info a.android:hover:after{content:" Android"; text-align:center; left:-3px; }
+section#apps div#app_icons div.app_info a.amazon:hover:after{content:" Amazon"; text-align:center; left:-5px; }
+section#apps div#app_icons div.app_info a.windows:hover:after{content:" Windows"; text-align:center; left:-7px; }
+section#apps div#app_icons div.app_info.last{margin-right:0;}
+section#apps div#app_icons div.app_info img.app_icon{margin:0 0 15px 0;}
+section#apps div#app_icons div.app_info img.apple { position:relative; top:1px;}
+section#apps div#app_icons div.app_info h4{font-size:1.15em;line-height:1.2em;font-weight:700;padding:0;margin:0 0 15px 0;width:100%;text-align:center;}
+section#apps div#app_icons div.app_info p{font-size:1.1em;line-height:1.5em;padding:0;margin:0 auto;width:88%;text-align:center;}
+section#apps div#app_icons div.app_info p.app_store_links{margin:0 auto; text-align:center; width:230px;}
+section#apps div#app_icons div.app_info p.app_store_links img{margin:0 3px;}
+
+section#website_widget{background-color:#f5f5f5;padding:90px 0;border-bottom:1px solid #ddd;}
+section#website_widget h3{font-size:1.6667em;line-height:1em;margin:0 0 15px;padding:0;font-weight:700;}
+section#website_widget p{font-size:1.15em;line-height:1.785em;width:60%;margin:0 auto;padding:0;}
+section#website_widget hr{border:0;background:transparent;height:0px;margin:30px 0;width:100%;float:left;clear:both;}
+section#website_widget div#cc_app_screenshot{float:left;clear:both;width:100%;height:500px;position:relative;}
+section#website_widget img#cc_app_website{position:absolute;left:198px;top:0;}
+section#website_widget img#cc_app_website_zoom1{position:absolute;top:78px;left:0;}
+section#website_widget img#cc_app_website_zoom2{position:absolute;top:30px;right:0;}
+section#website_widget .embed_ccapp{width:444px;}
+section#website_widget .embed_ccapp h4{width:100%;font-size:1.15em;line-height:1.428em;margin:0;padding:0;font-weight:600;}
+section#website_widget .embed_ccapp p{width:100%;font-size:1em;line-height:1.785em;margin:0 0 1em;padding:0;}
+section#website_widget .embed_ccapp p b{font-weight:600;}
+section#website_widget .embed_ccapp code{text-align:left;background-color:#fff;float:left;clear:both;border:1px solid #bbb;height:7em;padding:10px;width:422px;font-size:1em;line-height:1.785em;}
+section#website_widget #embed_left.embed_ccapp{text-align:right;float:left;}
+section#website_widget #embed_right.embed_ccapp{text-align:left;float:right;}
+
+section#request_form{background-color:#f5f5f5;padding:90px 0;border-bottom:1px solid #ddd;}
+section#request_form h3{font-size:1.6667em;line-height:1em;margin:0 0 15px;padding:0;font-weight:700;}
+section#request_form h3 a{color:#8dc63f;}
+section#request_form p{font-size:1.15em;line-height:1.785em;width:60%;margin:0 auto;padding:0;}
+section#request_form form#moreinfo{width:100%;padding:0;margin:0;border:0;}
+section#request_form form#moreinfo .contactUs { display:none;}
+section#request_form div.form_area{width:100%;padding:45px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+
+body#contact_tabs section#request_form .select_contact_type { margin:0 0 400px 0; float:left; }
+body#contact_tabs section#request_form .contact_type { float:left; width:31%; padding:0 12px; }
+body#contact_tabs section#request_form .contact_type p { width:100%; font-size:13px; }
+body#contact_tabs section#request_form .inner.one_off { width:1035px; }
+body#contact_tabs section#request_form .inner.one_off #tabs-triggers { width:95%; }
+body#contact_tabs section#request_form .contact_type .centered h3 { font-weight:700; font-size:16px; }
+body#contact_tabs section#request_form .contact_type .centered h4 { margin:5px 0 10px 0; }
+body#contact_tabs section#request_form .contact_type p.cta { margin-top:25px; }
+body#contact_tabs section#request_form .contact_type p a.lte_gry_rnd_btn { margin:0 auto; float:none; width:170px; }
+    
+body#contact_tabs section#request_form div.form_area { padding:150px 0; position:relative; height:400px; }
+body#contact_tabs section#request_form div.form_area a.back_top { position:absolute; right:55px; top:55px; color:#777;}
+body#contact_tabs section#request_form div.form_area a.back_top:after { width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent;border-bottom:5px solid black; display:inline-block;}
+body#contact_tabs section#request_form div.form_area .subscriber_check input, body.contact_tabs section#request_form div.form_area .subscriber_check label { cursor:pointer; }
+body#contact_tabs section#request_form div.form_area .subscriber_check { width:365px; margin:0 auto; }
+body#contact_tabs section#request_form div.form_area .subscriber_check p { width:100%; }
+body#contact_tabs section#request_form div.form_area .teacherLogin { float:left; display:none; width:100%; }
+body#contact_tabs section#request_form div.form_area .teacherLogin .sq_btn.login {float: left;margin: 12px 0 12px 30px;color: #555;font-size: 13px;font-weight: 400;text-decoration: none;line-height: 30px;transition: color 0.3s;-webkit-transition: color 0.3s; }
+body#contact_tabs section#request_form div.form_area .teacherLogin h3.gray { color:#888; font-weight:400; }
+body#contact_tabs section#request_form div.form_area .techForm { float:left; width:100%; }
+body#contact_tabs section#request_form div.form_area .techForm h3.gray { color:#888; font-weight:400; }
+body#contact_tabs section#request_form div.form_area fieldset label input { width:200px; }
+body#contact_tabs section#request_form div.form_area fieldset.col-a { width:375px; }
+body#contact_tabs section#request_form div.form_area fieldset.col-ab label textarea { width:200px; height:60px; }
+
+section#request_form div.form_area *.lte_gry_rnd_btn { margin:35px 45px 0 0; }
+section#request_form div.form_area fieldset{width:454px;padding:0;margin:0;border:0;}
+section#request_form div.form_area fieldset label{width:100%;margin:5px 0;padding:0;float:left;clear:both;}
+section#request_form div.form_area fieldset label span.label.hear { line-height:18px;}
+section#request_form div.form_area fieldset label.note{margin:0 0 15px;font-size:0.875em;line-height:1em;float:right; text-align:left; width:310px;}
+section#request_form div.form_area fieldset label.note a{color:#8dc63f;}
+section#request_form div.form_area fieldset label i{color:#8dc63f;}
+section#request_form div.form_area fieldset label span.label{width:147px;line-height:30px;font-size:14px;font-weight:600;float:left;display:block;}
+section#request_form div.form_area fieldset label span.label.full{width:100%;line-height:30px;font-size:14px;font-weight:600;float:left;display:block;}
+section#request_form div.form_area fieldset label input{width:298px;padding:0 3px;border:1px solid #ddd;height:28px;line-height:28px;float:left;display:block;font-family:'Open Sans';font-weight:300;}
+section#request_form div.form_area fieldset label input.zip { width:50px;}
+section#request_form div.form_area fieldset label input.short{width:78px;padding:0 3px;margin-right:4px;border:1px solid #ddd;height:28px;line-height:28px;float:left;display:block;}
+section#request_form div.form_area fieldset label input.med{width:118px;padding:0 3px;border:1px solid #ddd;height:28px;line-height:28px;float:left;display:block;}
+section#request_form div.form_area fieldset label input.lrg{width:200px;padding:0 3px;border:1px solid #ddd;height:28px;line-height:28px;float:left;display:block;}
+section#request_form div.form_area fieldset label select{padding:4px 0 2px 4px;margin:0;border:1px solid #ddd;height:28px;line-height:28px;float:left;display:block;background-color:#fff;font-family:'Open Sans';font-weight:300;}
+section#request_form div.form_area fieldset label textarea{width:446px;padding:3px;border:1px solid #ddd;height:47px;line-height:16px;float:left;display:block;font-family:'Open Sans';font-weight:300;}
+section#request_form div.form_area fieldset.col-a{float:left;}
+section#request_form div.form_area fieldset.col-b{float:left; margin-left:25px; width:454px;}
+section#request_form div.form_area fieldset label select option { max-width:265px; white-space: nowrap; overflow: hidden; box-sizing:border-box; text-overflow: ellipsis;}
+
+section#request_form div.form_area fieldset.col-ab{float:left;width:100%; }
+section#request_form div.form_area fieldset.col-ab label textarea{width:775px;height:10em;}
+section#request_form div.form_area fieldset.col-ab label span.label{width:148px;line-height:30px;font-size:14px;font-weight:600;float:left;display:block;}
+
+section#contest_area{background-color:#fff;padding:90px 0 0;border-bottom:1px solid #ddd;}
+section#contest_area h3{padding:0;margin:0;font-size:20px;line-height:34px;text-align:center;}
+section#contest_area p{font-size:14px;line-height:1.8725em;text-align:center;margin:6px auto;width:600px;}
+section#contest_area div#breakdown{background:url(//www.masteryconnect.com/learn-more/im/resourcePinsHand.jpg) no-repeat bottom left;width:600px;margin:72px auto 0;height:393px;}
+section#contest_area div#breakdown ul{width:317px;float:right;margin:80px 0 0;}
+section#contest_area div#breakdown ul li{font-size:14px;line-height:30px;}
+
+section#contest_detail{background-color:#e1f6c6;padding:90px 0;border-bottom:1px solid #ddd;}
+section#contest_detail h3{padding:0;margin:0;font-size:20px;line-height:30px;text-align:center;}
+section#contest_detail h4{padding:0;margin:24px 0;font-size:16px;line-height:25px;text-align:center;}
+section#contest_detail p{font-size:14px;line-height:1.8725em;text-align:center;margin:6px auto;width:600px;}
+
+section#feature_area .down_arrow { width:20px; height:10px; margin:10px auto; display:block; }
+section#ourVideos{background-color:#fff;padding:90px 0;border-bottom:1px solid #ddd;}
+section#ourVideos .centered { position:relative; }
+section#ourVideos .centered .mr_archibald { position:absolute; top:-195px; right:0; }
+section#ourVideos h3{font-size:1.6667em;line-height:1em;margin:0 0 15px;padding:0;font-weight:700;}
+section#ourVideos p{font-size:1.15em;line-height:1.785em;width:88%;margin:0 auto;padding:0;}
+section#ourVideos .slideDeck { width:512px; margin:35px auto; position:relative; }
+section#ourVideos #posters{border:14px solid #fff;width:512px;height:288px;-moz-box-shadow:0 0 5px 0 #333;-webkit-box-shadow: 0 0 5px 0 #333;box-shadow:0 0 5px 0 #333;}
+section#ourVideos #pager{position:absolute; bottom:-25px; left:236px; width:48px;}
+section#ourVideos #pager a{width:6px;height:6px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius:3px;background-color:#fff;float:left;display:block;margin-right:6px;-moz-box-shadow:0 0 1px 0 #555;-webkit-box-shadow: 0 0 1px 0 #555;box-shadow:0 0 1px 0 #555;}
+section#ourVideos #pager a.activeSlide{background-color:#b5d485;}
+section#ourVideos .inner .cta { width:200px; margin:50px auto 0; }
+
+/*------------- CSS for report cards landing page -------------*/
+body#report_cards { font:300 13px/1.5 'Open Sans', sans-serif; }
+body#report_cards header.mainNav { background:#8dc63f; height:67px;  }
+body#report_cards header img { position:relative; top:-33px; max-width:100%; }
+body#report_cards section.feature_section { padding:90px 0; text-align:center; width:100%; background:#fff; border-top:1px solid #ddd; position:relative;  }
+body#report_cards section.feature_section.extra_padding { padding:120px 0; }
+body#report_cards section.feature_section #card_reveal { margin:0 auto; position:relative; top:33px; height:400px;}
+body#report_cards section.feature_section #card_reveal #opaque { position:absolute; bottom:3px; left:288px; opacity:.9; height:66px; width:400px; background:#fff; }
+body#report_cards section.feature_section #card_reveal #rnd { position:absolute; top:-37px; left:4px; }
+body#report_cards section.feature_section #card_reveal #rec { position:absolute; top:75px; right:6px; }
+body#report_cards section.feature_section.one { padding:90px 0 1px 0; }
+body#report_cards section.feature_section.one .RequiredMarker { position:absolute; left:-3px; }
+body#report_cards section.feature_section.one #nav { display:block; position:relative; bottom:63px; border-bottom:1px solid #dfdfdf; }
+body#report_cards section.feature_section.one #nav.fixed { position:fixed; top:-18px; width:100%; z-index:1001; opacity:.9; background:#fff; bottom:inherit; }
+body#report_cards section.feature_section.one #nav ul { width:762px; margin:0 auto; }
+body#report_cards section.feature_section.one #nav ul.fixed { width:865px; }
+body#report_cards section.feature_section.one #nav ul li { float:left; font-size:16px; position:relative; cursor:pointer; top:1px; }
+body#report_cards section.feature_section.one #nav ul li:not(#top):hover { background:#fdfbfb; }
+body#report_cards section.feature_section.one #nav ul li img { position:absolute; top:23px; left:15px; }
+body#report_cards section.feature_section.one #nav ul li.selected { background:#f2f2f2; top:1px; }
+body#report_cards section.feature_section.one #nav ul li#top { font-family:open sans; font-size:10px; font-weight:700; position:relative;height:65px; line-height:69px; width:100px; letter-spacing:1px; }
+body#report_cards section.feature_section.one #nav ul li#top a:hover:after { content:"top"; position:absolute; top:0; left:45px; cursor:pointer; }
+body#report_cards section.feature_section.one #nav ul li a { display:block; padding:25px 20px; text-decoration:none!important; min-height:15px; }
+body#report_cards section.feature_section #report_card_vid { width:525px; margin:0 auto; cursor:pointer; }
+body#report_cards section.feature_section #report_card_vid #willardVideo { border:1px solid #dadada; box-shadow:1px 3px 7px #dadada; padding:12px; width:480px; height:270px; background:#fff; margin:0 auto; cursor:pointer;}
+body#report_cards section.feature_section p { font-size:16px; }
+body#report_cards section.feature_section p.fluff { max-width:375px; text-align:center; margin:10px auto 30px; font-size:14px; line-height:18px; }
+body#report_cards section.feature_section p.quote { font-size:26px; line-height:34px; margin:0 0 45px 0; font-style:italic; font-weight:100; color:#777; }
+body#report_cards section.feature_section p.quote_man { line-height:28px; }
+body#report_cards section.feature_section h1 { font-weight:100; }
+body#report_cards section.feature_section h2 { margin:15px 0 0 0; font-size:22px; font-weight:bold; }
+body#report_cards section.feature_section h3 { font-weight:bold; font-size:20px; margin-bottom:35px; }
+body#report_cards section.feature_section h4 { font-weight:600; font-size:15px; }
+body#report_cards section.feature_section.gray { background:#f5f5f5; }
+body#report_cards section.feature_section .centered { width:978px; margin:0 auto; }
+body#report_cards section.feature_section .btn_center { width:230px; margin:40px auto 0; clear:both; }
+body#report_cards section.feature_section .btn_center #first_cta { display:none; }
+body#report_cards section.feature_section #grading { width:775px; margin:65px auto 0; }
+body#report_cards section.feature_section #grading img { float:left; }
+body#report_cards section.feature_section #grading #bullets { width:350px; float:right; margin-top:25px; }
+body#report_cards section.feature_section #grading #bullets header { width:325px; text-align:left; font-size:16px; line-height:24px; font-weight:bold; background:none; border:none; }
+body#report_cards section.feature_section #grading #bullets ul { margin-left:13px; }
+body#report_cards section.feature_section #grading #bullets li { text-align:left; max-width:325px; text-indent:-8px; padding:0 0 5px 0; line-height:20px; }
+body#report_cards section.feature_section #grading #bullets li:before { content:"+"; position:relative; right:5px; }
+body#report_cards section.feature_section #grading #bullets p { font-size:13px; color:#8dc63f; float:left; margin:15px 0 0 0; position:relative; }
+body#report_cards section.feature_section #grading #bullets p img { width:55px; }
+body#report_cards section.feature_section #grading #bullets #arrow { width:0; height:0; border-left:5px solid #999; border-top:4px solid transparent; border-bottom:4px solid transparent; display:inline-block; margin-right:4px; }
+body#report_cards section.feature_section #grading #bullets p img { float:none; position:absolute; top:3px; right:-3px; top:-26px; right:-64px; }
+body#report_cards section.feature_section .centered .btn_center.spaced { margin:80px auto 0; width:290px; }
+  
+/*------------- CSS for MASTERYCON landing page -------------*/
+section.feature_section.one.mcon { height:250px; }
+section.feature_section.one.mcon #mcon_logo { float:left; text-align:center; width:190px; height:138px; margin:30px 0 30px 80px;}
+section.feature_section.one.mcon #mcon_logo h4 { font-size:22px; margin:20px 0 0 0; }
+section.feature_section.one.mcon #mcon_logo h4 b { font-weight:700; }
+section.feature_section.one.mcon #mcon_header { float:left; width:615px; margin-top:65px;}
+section.feature_section.one.mcon #mcon_header h4 {font-size:15px; line-height:23px; margin:20px 0 25px;}
+
+body#masterycon { z-index:1; position:relative; }
+
+body#masterycon section#feature_top {min-height:130px;background:#8dc63f url(//www.masteryconnect.com/learn-more/im/green_band.jpg) repeat center top;padding:55px 0;border-bottom:1px solid #ddd;}
+body#masterycon section#feature_top h2{font-weight:700;color:#fff;font-size:58px;text-shadow:0 0 5px #464646;margin:0;padding:0;line-height:68px;float:left;width:100%;text-align:center;}
+body#masterycon section#feature_top h4 b{font-weight:600;}
+body#masterycon section#feature_top p{font-size:.83em;font-style:normal;letter-spacing:0.2em;font-weight:400;color:#fff;text-shadow:0 0 5px #464646;margin:6px 0;padding:0;line-height:20px;width:100%;text-align:center;}
+
+body#masterycon section a.green { color:#6ea523; text-decoration:none; }
+body#masterycon section a.green:hover { color:#555; }
+body#masterycon #modal_wrap { display:none; width:100%; height:100%; background:url(//www.masteryconnect.com/learn-more/im/overlay_pattern.png); position:absolute; z-index:101; top:0; left:0; cursor:pointer; }
+body#masterycon #activity_modal { display:none; width:800px; height:600px; position:fixed; background-clip:padding-box;-webkit-background-clip: padding-box; left:50%; margin-left:-400px; background:#fff; border:15px solid rgba(0,0,0,.2); }
+body#masterycon #activity_modal img { display:none; width:800px; height:600px; }
+body#masterycon section .showMobile { display:none; }
+body#masterycon section.feature_section { width:100%; }
+body#masterycon section.feature_section.one { padding:45px 0 45px 0; position:relative; }
+body#masterycon section.feature_section.one .RequiredMarker { position:absolute; left:-3px; }
+body#masterycon section.feature_section.one #nav { display:block; position:absolute; bottom:-67px; border-bottom:1px solid #dfdfdf; width:100%; background:#fff; height:64px; }
+body#masterycon section.feature_section.one #nav.fixed { position:fixed; top:100px; width:100%; z-index:1001; opacity:.9; background:#fff; bottom:inherit; z-index:1;}
+body#masterycon section.feature_section.one #nav ul { width:550px; margin:0 auto; }
+body#masterycon section.feature_section.one #nav ul.fixed { width:550px; }
+body#masterycon section.feature_section.one #nav ul li { float:left; font-size:16px; position:relative; cursor:pointer; top:-16px; }
+body#masterycon section.feature_section.one #nav ul li:not(#top):hover { background:#fdfbfb; }
+body#masterycon section.feature_section.one #nav ul li img { position:absolute; top:23px; left:15px; }
+body#masterycon section.feature_section.one #nav ul li.selected { background:#f5f5f5; border-bottom:#f5f5f5;}
+body#masterycon section.feature_section.one #nav ul li#top { font-family:open sans; font-size:10px; font-weight:700; position:relative;height:65px; line-height:69px; width:100px; letter-spacing:1px; }
+body#masterycon section.feature_section.one #nav ul li#top a:hover:after { content:"top"; position:absolute; top:0; left:45px; cursor:pointer; }
+body#masterycon section.feature_section.one #nav ul li a { display:block; padding:25px 20px; text-decoration:none!important; min-height:15px; }
+body#masterycon section.feature_section.one #nav ul li a:hover {background:#f5f5f5;}
+
+body#masterycon section#ride_comet { background-color:#f5f5f5;padding:145px 0 75px 0;border-bottom:1px solid #ddd; }
+body#masterycon section#ride_comet #comet_image { width:312px; margin:0 auto; text-align:center; }
+body#masterycon section#ride_comet h3{padding:0;margin:0;font-size:20px;line-height:34px;text-align:center; margin:30px auto; font-weight:700;}
+body#masterycon section#ride_comet p { width:450px; font-size:14px; line-height:20px; margin:0 auto 20px; text-align:center; }
+body#masterycon section#ride_comet #register { width:250px; margin:35px auto; text-align:center; }
+body#masterycon section#ride_comet #register a { display:inline-block; margin:0 0 15px 0;  }
+body#masterycon section#ride_comet #register em { color:#555; font-size:11px; font-weight:300; }
+
+body#masterycon section#be_presenter { background-color:#fff;padding:170px 0 150px 0;border-bottom:1px solid #ddd; }
+body#masterycon section#be_presenter.clicked { padding:200px 0 120px 0; }
+body#masterycon section#be_presenter h3{padding:0;margin:0;font-size:20px;line-height:34px;text-align:center; margin:0 auto 30px; font-weight:700;}
+body#masterycon section#be_presenter p { width:560px; font-size:14px; line-height:20px; margin:0 auto 20px; text-align:center; }
+body#masterycon section#be_presenter #presenters { width:600px; margin:60px auto;}
+body#masterycon section#be_presenter #presenters li { float:left; width:200px; height:200px; position:relative; cursor:pointer; }
+body#masterycon section#be_presenter #presenters li.one { background:url(//www.masteryconnect.com/learn-more/im/masterycon/danielle_sellenriek.png); }
+body#masterycon section#be_presenter #presenters li.two { background:url(//www.masteryconnect.com/learn-more/im/masterycon/patrick_coleman.png); }
+body#masterycon section#be_presenter #presenters li.three { background:url(//www.masteryconnect.com/learn-more/im/masterycon/angeline_oneil.png);}
+body#masterycon section#be_presenter #presenters li.four { background:url(//www.masteryconnect.com/learn-more/im/masterycon/michael_bolsoni.png);}
+body#masterycon section#be_presenter #presenters li.five { background:url(//www.masteryconnect.com/learn-more/im/masterycon/garrick_peterson.png);}
+
+body#masterycon section#be_presenter #presenters li:hover { width:200px; height:200px; }
+body#masterycon section#be_presenter #presenters li.one:hover { background-position:200px 0; }
+body#masterycon section#be_presenter #presenters li.two:hover { background-position:200px 0; }
+body#masterycon section#be_presenter #presenters li.three:hover { background-position:200px 0; }
+body#masterycon section#be_presenter #presenters li.four:hover { background-position:200px 0; }
+body#masterycon section#be_presenter #presenters li.five:hover { background-position:200px 0; }
+
+body#masterycon section#be_presenter #presenters li span#switch { display:inline-block; width:200px; height:200px; background:url(//www.masteryconnect.com/learn-more/im/masterycon/open_block.png); }
+body#masterycon section#be_presenter #presenters li span#switch:hover {  cursor:pointer; background-position:200px 0; }
+
+body#masterycon section#gen_schedule { background-color:#f5f5f5;padding:170px 0;border-bottom:1px solid #ddd; }
+body#masterycon section#gen_schedule.clicked { padding:200px 0 90px 0; }
+body#masterycon section#gen_schedule div.col-a {width:34%;float:left; text-align:left; }
+body#masterycon section#gen_schedule div.col-a h3 { font-size:20px; color:#555; font-weight:700; }
+body#masterycon section#gen_schedule div.col-b { width:66%; float:right; text-align:left; }
+body#masterycon section#gen_schedule div.col-b .con_day { margin:0 0 45px 0; }
+body#masterycon section#gen_schedule div.col-b .con_day .session li { line-height:24px; color:#989898; font-size:14px;}
+body#masterycon section#gen_schedule div.col-b .con_day .session li .time { width:150px; display:inline-block; margin: 0 25px 0 0; }
+body#masterycon section#gen_schedule div.col-b .con_day .session li .green { font-size:12px; }
+body#masterycon section#gen_schedule div.col-b .con_day h4 { margin:0 0 15px 0; font-size:16px; font-weight:600; }
+
+body#masterycon section#plan_trip { background-color:#fff;padding:170px 0;border-bottom:1px solid #ddd; }
+body#masterycon section#plan_trip.clicked { padding:200px 0 100px 0; }
+body#masterycon section#plan_trip .hideMobile { display:block; }
+body#masterycon section#plan_trip div.col-a { width:300px;float:left;}
+body#masterycon section#plan_trip div.col-a h3 { font-size:20px; font-weight:700; }
+body#masterycon section#plan_trip div.col-b { width:650px; float:right; }
+body#masterycon section#plan_trip div.col-b #activity_pics { margin: 0 0 45px -8px; }
+body#masterycon section#plan_trip div.col-b #activity_pics ul li { float:left; cursor:pointer; }
+body#masterycon section#plan_trip div.col-b #activity_pics ul li img.lrg { display:none; }
+body#masterycon section#plan_trip div.col-b .lists { margin:0 0 50px 0; color:#989898; line-height:22px; }
+body#masterycon section#plan_trip div.col-b .lists h4 { font-size:16px; color:#555; font-weight:600; margin:0 0 15px 0;  }
+body#masterycon section#plan_trip div.col-b .lists h5 { font-weight:200; margin:-5px 0 10px; }
+body#masterycon section#plan_trip div.col-b .lists ul li {  }
+body#masterycon section#plan_trip #last_register { text-align:center; width:240px; margin:80px 0 0 0; }
+body#masterycon section#plan_trip #last_register .lte_grn_rnd_btn { margin:0 auto; float:none; }
+body#masterycon section#plan_trip #last_register p { font-size:11px; color:#989898; margin:25px 0 0 0; }
+body#masterycon section#plan_trip #last_register p strong { color:#666; }
+
+
+/*------------- CSS for NEWSROOM page -------------*/
+
+body#newsroom section .hideMobile { display:block; }
+
+body#newsroom section.feature_section#feature_area { padding:55px 0; }
+body#newsroom section.feature_section#feature_area div.inner.main { width:600px; }
+body#newsroom section.feature_section#feature_area h2 { margin:5px 0 25px 0;}
+body#newsroom section.feature_section#feature_area h4 { width:600px; margin:0 auto; }
+body#newsroom section.feature_section { width:100%; }
+body#newsroom section.feature_section.one { padding:45px 0 45px 0; position:relative; }
+body#newsroom section.feature_section.one .RequiredMarker { position:absolute; left:-3px; }
+body#newsroom section.feature_section.one #nav { display:block; position:absolute; bottom:-67px; border-bottom:1px solid #dfdfdf; width:100%; background:#fff; height:64px; }
+body#newsroom section.feature_section.one #nav.fixed { position:fixed; top:100px; width:100%; z-index:1001; opacity:.9; background:#fff; bottom:inherit; z-index:1;}
+body#newsroom section.feature_section.one #nav ul { width:410px; margin:0 auto; }
+body#newsroom section.feature_section.one #nav ul.fixed { width:410px; }
+body#newsroom section.feature_section.one #nav ul li { float:left; font-size:16px; position:relative; cursor:pointer; top:-16px; }
+body#newsroom section.feature_section.one #nav ul li:not(#top):hover { background:#fdfbfb; }
+body#newsroom section.feature_section.one #nav ul li img { position:absolute; top:23px; left:15px; }
+body#newsroom section.feature_section.one #nav ul li.selected { background:#f5f5f5; border-bottom:#f5f5f5;}
+body#newsroom section.feature_section.one #nav ul li#top { font-family:open sans; font-size:10px; font-weight:700; position:relative;height:65px; line-height:69px; width:100px; letter-spacing:1px; }
+body#newsroom section.feature_section.one #nav ul li#top a:hover:after { content:"top"; position:absolute; top:0; left:45px; cursor:pointer; }
+body#newsroom section.feature_section.one #nav ul li a { display:block; padding:25px 20px; text-decoration:none!important; min-height:15px; }
+body#newsroom section.feature_section.one #nav ul li a:hover {background:#f5f5f5;}
+
+body#newsroom section.feature_section#in_news { background-color:#f5f5f5;padding:170px 0 90px 0;border-bottom:1px solid #ddd; }
+body#newsroom section.feature_section#in_news div.col-a { width:300px;float:left;}
+body#newsroom section.feature_section#in_news div.col-a h3 { font-size:20px; font-weight:700; }
+body#newsroom section.feature_section#in_news div.col-b { width:675px; float:right; }
+body#newsroom section.feature_section#in_news li[data-id="news"] { display:none; }
+body#newsroom section.feature_section div.col-b ul li.outlet { margin:0 0 45px 0; }
+body#newsroom section.feature_section div.col-b ul li.outlet h4 { font-size:16px; margin:25px 0 15px 0; }
+body#newsroom section.feature_section div.col-b ul li.outlet p.quote { font-style:italic; margin-bottom:15px; color:#888; line-height:18px; }
+body#newsroom section.feature_section div.col-b ul li.outlet p.source a.green { color:#6ea523; font-size:14px; font-weight:700; text-decoration:none; }
+body#newsroom section.feature_section div.col-b ul li.outlet p.source a.red { color:#ec008c; text-decoration:none; font-size:11px; }
+body#newsroom section.feature_section div.col-b p.toggle .plus, div.col-b p.toggle .minus { font-size:18px; line-height: 22px; } 
+body#newsroom section.feature_section div.col-b p.toggle span.view_all { cursor:pointer; text-decoration:none; }
+body#newsroom section.feature_section div.col-b p.toggle span.view_all.collapse { display:none; }
+
+body#newsroom section.feature_section#press_releases { background-color:#fff;padding:170px 0 90px 0;border-bottom:1px solid #ddd; }
+body#newsroom section.feature_section#press_releases div.col-a { width:300px;float:left;}
+body#newsroom section.feature_section#press_releases div.col-a h3 { font-size:20px; font-weight:700; }
+body#newsroom section.feature_section#press_releases div.col-b { width:675px; float:right; }
+body#newsroom section.feature_section#press_releases div.col-b li[data-id="press"] { display:none; }
+body#newsroom section.feature_section#press_releases div.col-b ul li.outlet h4 { margin:0 0 15px 0; }
+
+body#newsroom section.feature_section#downloads { background-color:#f5f5f5;padding:170px 0 90px 0;border-bottom:1px solid #ddd; }
+body#newsroom section.feature_section#downloads div.col-a { width:300px;float:left;}
+body#newsroom section.feature_section#downloads div.col-a h3 { font-size:20px; font-weight:700; }
+body#newsroom section.feature_section#downloads div.col-b { width:675px; float:right; }
+body#newsroom section.feature_section#downloads div.col-b ul li.outlet { margin:0 0 45px 0; }
+body#newsroom section.feature_section#downloads div.col-b ul li div.logo_down { float:left;}
+body#newsroom section.feature_section#downloads div.col-b ul li div.logo_down .zip { height:75px; margin:15px 0 5px 0; }
+body#newsroom section.feature_section#downloads div.col-b ul li div.logo_down .zip.one { width:192px; }
+body#newsroom section.feature_section#downloads div.col-b ul li div.logo_down .zip.one img { margin-top:13px; }
+body#newsroom section.feature_section#downloads div.col-b ul li div.logo_down .zip.two { width:267px; }
+body#newsroom section.feature_section#downloads div.col-b ul li div.logo_down .zip.two img { margin-top:31px; }
+body#newsroom section.feature_section#downloads div.col-b ul li div.logo_down .zip.three { width:195px; }
+body#newsroom section.feature_section#downloads div.col-b p.quote { font-style:normal; }
+body#newsroom section.feature_section#downloads div.col-b div.source li { margin-bottom:8px;  }
+body#newsroom section.feature_section#downloads div.col-b a.green { color:#6ea523; text-decoration:none; }
+body#newsroom section.feature_section#downloads div.col-b h4 { margin:0 0 5px 0;  }
+body#newsroom section.feature_section#downloads div.col-b h5 { font-weight:500; font-size:14px; }
+
+
+body#proposal_form section.feature_section.one { width:750px; margin: 0 auto; }
+body#proposal_form header.mainNav { background:#8dc63f; height:67px;  }
+body#proposal_form header img { position:relative; top:-33px; max-width:100%; }
+
+body#system_down { position:relative; height:100%; width:100%; }
+body#system_down header.mainNav { background:#8dc63f; height:107px;  }
+body#system_down section a.green { color:#6ea523; text-decoration:none; }
+body#system_down header img { position:relative; top:-13px; max-width:100%; }
+body#system_down section.feature_section.one { width:100%; padding:150px 0 135px 0; margin: 0 auto; border-top:1px solid #999; height:450px; }
+body#system_down section.feature_section.one h1 { font-size:38px; font-weight:700; text-align:center; margin:10px 0; }
+body#system_down section.feature_section.one h2 { font-size:18px; font-weight:500; text-align:center; }
+body#system_down section.feature_section p { font-size:14px; line-height:26px; width:550px; margin:35px auto 55px; text-align:center; }
+body#system_down footer#footer_nav { background:#e0f6c7; height:70px; width:100%; position:relative; bottom:-10px; border-top:3px solid #000;}
+body#system_down footer#footer_nav #footer_wrap { width:450px; margin:0 auto; }
+body#system_down footer#footer_nav img { float:left; }
+body#system_down footer#footer_nav p { float:right; color:#444;}
+
+footer#footer_nav { background:#3c3c3c url(//www.masteryconnect.com/learn-more/im/footer_repeat.jpg) repeat center top;border-top:6px solid #000;padding:50px 0;color:#ccc;font-weight:400;}
+footer#footer_nav address { float:left;padding:0;margin:0;width:25%;font-style:normal;text-shadow:1px 0px 0px #000;}
+footer#footer_nav address a { color:#ccc;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;}
+footer#footer_nav address a:hover { color:#00aced;}
+footer#footer_nav address h4 { font-size:14px;font-weight:600;padding:0;margin:0 0 8px;}
+footer#footer_nav address h4 strong { font-weight:700;}
+footer#footer_nav address p { line-height:1.8725em;margin:0;}
+footer#footer_nav address p b { font-weight:400;}
+footer#footer_nav nav { float:left;padding:0;margin:0;width:17.25%;text-shadow:1px 0px 0px #000;}
+footer#footer_nav nav a { color:#ccc;text-decoration:none;}
+footer#footer_nav nav a:hover:after { content:" »";}
+footer#footer_nav nav h4 { font-weight:600;padding:0;margin:0 0 8px;}
+footer#footer_nav nav ul { padding:0;margin:0;list-style:none;}
+footer#footer_nav nav ul li { font-size:1em;line-height:1.8725em;}
+footer#footer_nav div#cta { width:23%;float:right;}
+footer#footer_nav div#cta a { clear:both;margin:0 0 12px 18px;}
+footer#footer_nav div#cta i { font-size:.83em;font-style:normal;font-weight:600;letter-spacing:0.2em;float:left;clear:both;}
+      
+footer#sub_footer{background-color:#282828;padding:25px 0;line-height:18px;font-size:11px;font-weight:400;font-style:italic;color:#aaa;text-shadow:0 -1px 0 #000;}
+
+/*-------- CSS for modal container for jobs.html page, etc -----------*/
+aside.modalContainer {display:none; background:url(//www.masteryconnect.com/learn-more/im/overlay_pattern.png); z-index:99; top:0; left:0; background-position:top left; position:fixed;width:100%;height:100%; }
+aside.modalContainer .content { max-height:95%; overflow:auto;z-index:101; background:#fafafa; position:fixed; left:50%; top:-15px; border:15px solid rgba(0,0,0,.3); 
+	-moz-background-clip: padding;     		/* Firefox 3.6 */
+  	-webkit-background-clip: padding-box;  	/* Safari 4? Chrome 6? */
+  	background-clip: padding-box;      		/* Firefox 4, Safari 5, Opera 10 */
+}
+aside.modalContainer .content { width:948px;margin-left:-489px; }
+aside.modalContainer .content header{height:100px;width:100%;padding:0;margin:0;border:0;border-bottom:1px solid #ddd;}
+aside.modalContainer .content header h1{font-size:24px;font-weight:700;line-height:100px;padding:0 35px;margin:0;text-align:left;}
+aside.modalContainer .content .closeModal { cursor:pointer; position:absolute; top:15px; right:15px; font-size:40px; width:16px; height:16px; }
+aside.modalContainer .content #dialog{background-color:#fafafa;border-top:1px solid #f0f0f0;padding:30px 25px;width:878px;float:left;}
+aside.modalContainer .content #dialog .dialog_content{position:relative;float:left;clear:both; width:100%;}
+  
+/*------------- CSS for job listings -------------*/
+.jobListing .description, .jobListing .skills, .jobListing .looking, .jobListing .experience, .jobListing .apply { margin-top:20px; }
+.jobListing ul { margin:0 0 0 15px; padding:0; }
+.jobListing ul li { list-style-type:circle; margin-left:5px;}
+.jobListing header, .signUpFree header { border-bottom:1px solid #ddd; border-top:none; padding-left:25px; }
+.jobListing h1, .signUpFree h1 { font-weight:700; font-size:25px; }
+.jobListing h3 { width:215px; margin-left:45px; }
+.jobListing .copy { width:500px; padding:5px 25px 35px 0; }
+.jobListing .copy.border { border-bottom:1px solid #ddd; }
+
+div.videos div#video-player{float:left;clear:both;width:95%;height:95%;padding:20px;background-color:#fff;-moz-box-shadow:rgba(0,0,0,0.4) 1px 1px 4px;-webkit-box-shadow:rgba(0,0,0,0.4) 1px 1px 4px;box-shadow:rgba(0,0,0,0.4) 1px 1px 4px;}
+div.videos div#video-js-box { text-align:center;}
+div.videos #social_links{position:absolute;top:30px;right:35px;}
+div.videos #social_links a{float:left;margin:0 4px 0 0;width:21px;height:21px;display:block;text-indent:-9999px;overflow:hidden;}
+div.videos #social_links a.pinterest{background:url(//www.masteryconnect.com/learn-more/im/social_icon_pinterest.png) no-repeat 0 0;}
+div.videos #social_links a.facebook{background:url(//www.masteryconnect.com/learn-more/im/social_icon_facebook.png) no-repeat 0 0;}
+div.videos #social_links a.twitter{background:url(//www.masteryconnect.com/learn-more/im/social_icon_twitter.png) no-repeat 0 0;}
+div.videos #social_links a:hover{background-position:0 -21px;}
+div#video_posters{float:left;clear:both;margin:24px 0 0;}
+div#video_posters a{float:left;margin:0 12px 0 0;display:block;padding:4px;background-color:#fff;-moz-box-shadow:rgba(0,0,0,0.4) 1px 1px 4px;-webkit-box-shadow:rgba(0,0,0,0.4) 1px 1px 4px;box-shadow:rgba(0,0,0,0.4) 1px 1px 4px;}
+div#video_posters a:hover{background-color:#8dc63f;cursor:pointer;}
+div#video_posters a img{float:left;}
+
+form div#username{display:none;}
+
+/*-------- Hide the input arrows for webkit ------*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input/*Remove button padding in FF*/
+{ 
+    padding:.3em;
+}
