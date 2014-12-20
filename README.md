@@ -22,7 +22,7 @@ Do not worry about making any links work, or form(s) posting.
 
 Part II.
 
-Create a javascript class that validates the contact for data. It should validate the required fields (marked with asterisk above.)
+Create a javascript class that validates the contact for data. It should validate all of the fields.
 
 
 Part III.
@@ -39,11 +39,11 @@ The second method will take an integer as a param and return an array of integer
 
 The method will compare each number from 0 to the param and return an array of numbers that are evenly divisible by 3 and/or 5.
 
-eg. if the input integer is 10, the return should be [3,5,6,9,10]
+eg. if the input integer is 10, the return should be [0,3,5,6,9,10]
 
 
 ---
 
 You should be working in your own branch - generate commits at logical stop points. When you are finished, create a pull request and we will review your work. Do not push anything to master.
 
-please dont hesitate to email or contact us on Google Hangouts (**todd@masteryconnect.com**, **daniel@masteryconnect.com**, **eric@masteryconnect.com**) if you have any questions at all.
+please dont hesitate to email or contact us on Google Hangouts (**todd@masteryconnect.com**, **adam@masteryconnect.com**, **eric@masteryconnect.com**) if you have any questions at all.
