@@ -7,7 +7,9 @@ Part I.
 
 Create a contact form that would be production-ready.
 *The form should have the following fields:*
-Name*, Email*, Subject (with 3 or more predefined options), and a textarea for a message(1000 characters max.)
+First Name, Last Name, Phone, Email, and a textarea for a message(1000 characters max.)
+
+Please use the design files in /graphics as a guide for the UI.
 
 Place all of your HTML in the #request_form section in the index.html file.
 
@@ -27,7 +29,7 @@ Part III.
 
 In a separate file, create a Ruby class. The class should have 2 methods, one that accepts a string as a param, and returns a hash.
 
-The method will return each unique letter the string contains in order from most frequent to least frequent.
+The method will return each unique letter (case-insensitive) the string contains in order from most frequent to least frequent.
 
 eg. if the input string is 'foo bar baz', the return should be {a=>2, b=>2, o=>2, f=>1, r=>1, z=>1}
 
