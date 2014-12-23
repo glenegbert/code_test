@@ -17,20 +17,10 @@ class Stats
   end
 
   def self.divisible(integer)
-    (0..integer).map {|integer| integer if integer % 3 == 0 || integer % 5 == 0}.compact
+    (0..integer).map {|number| number if divisible_by?(number,3,5)}.compact
   end
 
+  def self.divisible_by?(number, *integers)
+    integers.any? {|integer| number % integer == 0}
+  end
 end
-# In a separate file, create a Ruby class. The class should have 2 methods, one that accepts a string as a param, and returns a hash.
-#
-# The method will return each unique letter (case-insensitive) the string contains in order from most frequent to least frequent.
-#
-# eg. if the input string is 'foo bar baz', the return should be {a=>2, b=>2, o=>2, f=>1, r=>1, z=>1}
-#
-# Use the text 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt arcu eget lacus blandit efficitur' as the string parameter.
-#
-# The second method will take an integer as a param and return an array of integers.
-#
-# The method will compare each number from 0 to the param and return an array of numbers that are evenly divisible by 3 and/or 5.
-#
-# eg. if the input integer is 10, the return should be [0,3,5,6,9,10]
