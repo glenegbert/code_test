@@ -37,6 +37,7 @@
   <script src="//www.masteryconnect.com/learn-more/js/video.js"></script>
   <script src="//www.masteryconnect.com/learn-more/js/request-a-demo.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/form.js"></script>
 </head>
 <body class="learn-more">
   <nav id="fixed_nav">
@@ -77,18 +78,19 @@
   <h3 class = "caps"> Have Questions? </h3>
   <h4> Please give us some details, and our support team will reach out. </h4>
   <div class="inner">
-    <form name="contact_form">
+    <form name="contact_form" onsubmit="return validateForm()">
       <fieldset class="col-a">
         <label> <span class="label">First Name<i>*</i></span><input type="text" name="fname"></label>
         <label> <span class="label">Last Name<i>*</i></span><input type="text" name="lname"></label>
-        <label> <span class="label">Phone </span><input type="phone" name="phone"></label>
+        <label> <span class="label">Phone <i>*</i></span><input type="phone" name="phone"></label>
         <label> <span class="label">Email <i>*</i></span><input type="text" name="email"></label>
       </fieldset>
       <fieldset class="col-b">
-        <label><span class="label">Your Message <br> <p class='helper_text'>(max. 100 characters) </p><i>*</i></span><textarea maxlength="100" class="message" name="data[message]"></textarea></label>
+        <label><span class="label">Your Message <i>*</i> <br> <p class='helper_text'>(max. 100 characters) </p></span><textarea maxlength="100" name="message"></textarea></label>
       </fieldset>
       <fieldset>
       </fieldset>
+      <input type="submit" value="Submit">
     </form>
     <button class="lte_gry_rnd_btn right">Submit</button>
 
