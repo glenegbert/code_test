@@ -30,7 +30,7 @@
   <!--[if lt IE 9]>
   <link rel="stylesheet" href="/learn-more/css/ie8.css?v=1.0" />
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->  
+  <![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="//www.masteryconnect.com/learn-more/js/jquery.cycle.min.js"></script>
   <script src="//www.masteryconnect.com/learn-more/js/jquery.cookie.js"></script>
@@ -74,8 +74,18 @@
   </div>
 </section>
 <section id="request_form">
+  <h1> Have Questions? </h1>
+  <h3> Please give us some details, and our support team will reach out </h3>
   <div class="inner">
-      <!--ADD ALL OF YOUR CONTENT HERE -->
+
+    <form name="contact_form">
+      First Name* <input type="text" name="fname">
+      Last Name* <input type="text" name="lname">
+      Phone* <input type="text" name="phone">
+      Email* <input type="text" name="email">
+      <label><span class="label">Your Message<i>*</i></span><textarea class="message" name="data[message]"></textarea></label>
+      <input type="submit" value="Submit">
+  </form>
   </div>
 </section>
 <footer id="footer_nav">
