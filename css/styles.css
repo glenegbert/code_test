@@ -86,15 +86,15 @@ i { font-style:italic; }
 ****************************************/
 
 * html .clearfix, *:first-child+html .clearfix { display:block; zoom:1; }
-.clearfix:after { 
+.clearfix:after {
    content: " ";
-   display: block; 
-   height: 0; 
+   display: block;
+   height: 0;
    clear: both;
 }
 img { max-width:100%; }
 
-body{background:#fff;padding:0;margin:0;font-family:'Open Sans',Arial,Helvetica,Tahoma,sans-serif;font-size:12px;line-height:1.33em;font-weight:400;color:#555;-webkit-font-smoothing: antialiased;}
+body{background:#E8E8EA;padding:0;margin:0;font-family:'Open Sans',Arial,Helvetica,Tahoma,sans-serif;font-size:12px;line-height:1.33em;font-weight:400;color:#555;-webkit-font-smoothing: antialiased;}
 
 ::-moz-selection{background-color:#9cc957;}
 ::selection{background-color:#9cc957;}
@@ -102,7 +102,7 @@ body{background:#fff;padding:0;margin:0;font-family:'Open Sans',Arial,Helvetica,
 form{margin:0;padding:0;border:0;}
 form button{border:0;outline:0;padding:0;margin:0;cursor:pointer;}
 form input:focus, form textarea:focus, form select:focus{outline: #8dc63f auto 5px;}
-  
+
 nav#fixed_nav{border-bottom:1px solid #666;height:auto;padding:24px 0 23px;background:#8dc63f url(//www.masteryconnect.com/learn-more/im/green_band.jpg) repeat center center;position:fixed;top:-100px;left:0;z-index:50;width:100%;}
 nav#fixed_nav div#links{float:right;width:75%;}
 nav#fixed_nav div#links a{text-shadow:0 -1px 0 rgba(0,0,0,.5);float:left;margin:11px 0 11px 30px;color:#FFF;font-size:17px;font-weight:600;text-decoration:none;line-height:30px;transition:color 0.3s;-webkit-transition:color 0.3s}
@@ -118,7 +118,7 @@ header nav .links a, header nav a.login {float:left;margin:12px 0 12px 30px;colo
 header nav a.login { font-size:13px; font-weight:700;}
 header nav a:hover{color:#333;}
 header nav .teacherLogin { float:right; }
-  
+
 div.inner{width:978px;margin:0 auto;text-align:left;}
 
 div.clear_fix{clear:both;}
@@ -170,7 +170,7 @@ a.sq_btn { text-decoration:none; cursor:pointer;}
 *.drk_gry_rnd_btn.sml{height:40px;width:143px;padding:0 20px; text-align:center;color:#eee;letter-spacing:0.175em;font-size:12px;line-height:40px;-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;}
 *.drk_gry_rnd_btn:hover{color:#ccc; text-decoration:none;}
 a.drk_gry_rnd_btn { text-decoration:none; cursor:pointer;}
-#home *.drk_gry_rnd_btn, #fixed_nav *.drk_gry_rnd_btn, #features *.drk_gry_rnd_btn { background:#eaa443; 
+#home *.drk_gry_rnd_btn, #fixed_nav *.drk_gry_rnd_btn, #features *.drk_gry_rnd_btn { background:#eaa443;
 	border:2px solid rgba(0, 0, 0, .5);
 	background-image: -moz-linear-gradient(top, #edb15d, #e4902f);
 	background-image: -ms-linear-gradient(top, #edb15d, #e4902f);
@@ -204,7 +204,7 @@ a.lte_gry_rnd_btn { text-decoration:none; cursor:pointer;}
 span.gc-cs-link{color:inherit;text-decoration:inherit;}
 
 section div.col-b hr{width:100%;border:0;border-top:1px solid #ddd;height:0;float:left;clear:both;margin:30px 0;}
-  
+
 section#feature_area {min-height:130px;background:#8dc63f url(//www.masteryconnect.com/learn-more/im/green_band.jpg) repeat center top;padding:55px 0;border-bottom:1px solid #ddd;}
 section#feature_area.home { height:320px; padding:70px 0 0;}
 section#feature_area.home .joinFree { margin-top:25px;}
@@ -234,7 +234,7 @@ section#feature_area #posters{border:14px solid #fff;width:337px;height:223px;-m
 section#feature_area #pager{position:absolute; bottom:-15px; left:158px; width:64px;}
 section#feature_area #pager a{width:6px;height:6px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius:3px;background-color:#fff;float:left;display:block;margin-right:6px;-moz-box-shadow:0 0 1px 0 #555;-webkit-box-shadow: 0 0 1px 0 #555;box-shadow:0 0 1px 0 #555;}
 section#feature_area #pager a.activeSlide{background-color:#b5d485;}
-          
+
 footer#footer_nav { background:#3c3c3c url(//www.masteryconnect.com/learn-more/im/footer_repeat.jpg) repeat center top;border-top:6px solid #000;padding:50px 0;color:#ccc;font-weight:400;}
 footer#footer_nav address { float:left;padding:0;margin:0;width:25%;font-style:normal;text-shadow:1px 0px 0px #000;}
 footer#footer_nav address a { color:#ccc;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;}
@@ -252,7 +252,7 @@ footer#footer_nav nav ul li { font-size:1em;line-height:1.8725em;}
 footer#footer_nav div#cta { width:23%;float:right;}
 footer#footer_nav div#cta a { clear:both;margin:0 0 12px 18px;}
 footer#footer_nav div#cta i { font-size:.83em;font-style:normal;font-weight:600;letter-spacing:0.2em;float:left;clear:both;}
-      
+
 footer#sub_footer{background-color:#282828;padding:25px 0;line-height:18px;font-size:11px;font-weight:400;font-style:italic;color:#aaa;text-shadow:0 -1px 0 #000;}
 
 /*-------- Hide the input arrows for webkit ------*/
@@ -264,6 +264,26 @@ input::-webkit-inner-spin-button {
 }
 
 input/*Remove button padding in FF*/
-{ 
+{
     padding:.3em;
+}
+
+section#request_form h3 {
+	font-size: 1.6667em;
+	line-height: 1em;
+	margin: 0 0 0px;
+	padding: 0;
+	font-weight: 700;
+}
+
+section#request_form h4 {
+	margin-bottom: 15px;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+section#request_form {
+	width: 80%;
+	margin: 100px auto;
+
 }
