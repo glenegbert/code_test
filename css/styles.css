@@ -273,13 +273,13 @@ section#request_form h3 {
 	line-height: 1em;
 	margin: 0 0 0px;
 	padding: 0;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 section#request_form h4 {
-	margin-bottom: 15px;
-	font-weight: 300;
-	font-size: 15px;
+	margin-bottom: 36px;
+	font-weight: 100;
+	font-size: 13px;
 }
 
 section#request_form {
@@ -295,6 +295,35 @@ section#request_form div.inner fieldset.col-a {
 
 section#request_form div.inner fieldset.col-b {
 		width: 400px;
+		float:left;
+	}
+
+	section#request_form div.inner fieldset.col-c {
+		width: 100px;
+		margin:50px 50px;
+		min-height: 77px;
+		padding-top: 115px;
+	}
+
+	section#request_form div.inner fieldset.col-c input {
+		height:40px;
+		background:url(//www.masteryconnect.com/learn-more/im/grey_rounded_button_left.png) no-repeat top left;
+		display:block;
+		padding-left:27px;
+		padding-right:27px;
+		padding-bottom:15px;
+		font-size:12px;
+		font-style:normal;
+		line-height:33px;
+		font-weight:700;
+		text-transform:uppercase;
+		color:#555;
+		text-decoration:none;
+		transition:color 0.3s;
+		-webkit-transition:color 0.3s;
+		float:left;
+		border-radius: 26px;
+		margin-left: 30px;
 	}
 
 section#request_form fieldset label span.label {
@@ -306,8 +335,6 @@ section#request_form fieldset label span.label {
 	display: block;
 }
 
-element.style {
-}
 
 section#request_form fieldset label {
 	width: 100%;
