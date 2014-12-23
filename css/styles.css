@@ -325,3 +325,8 @@ section#request_form textarea {
 width: 251px;
 height: 145px;
 }
+
+section#request_form .helper_text {
+	font-size: 12px;
+	font-weight: 400;
+}
