@@ -9,4 +9,9 @@ class StatsTest < MiniTest::Unit::TestCase
     Stats.letter_count('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt arcu eget lacus blandit efficitur').to_s
   end
 
+  def test_returns_numbers_between_zero_and_number_divisible_by_3_or_5
+    assert_equal '[0, 3, 5, 6, 9, 10]', Stats.divisible(10).to_s
+    assert_equal '[0, 3, 5, 6, 9, 10]', Stats.divisible(10).to_s
+  end
+
 end

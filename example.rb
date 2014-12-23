@@ -15,6 +15,11 @@ class Stats
     count_array = string_as_array.uniq.map {|letter| [letter.to_sym, string_as_array.count(letter)]}
     count_array.sort_by { |pair| pair[1]}.reverse
   end
+
+  def self.divisible(integer)
+    (0..integer).map {|integer| integer if integer % 3 == 0 || integer % 5 == 0}.compact
+  end
+
 end
 # In a separate file, create a Ruby class. The class should have 2 methods, one that accepts a string as a param, and returns a hash.
 #
