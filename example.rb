@@ -3,18 +3,17 @@ require 'pry'
 
 class Stats
   def self.letter_count(string)
-    letter_count = Hash.new(0)
-    no_spaces_string = string.gsub(/\W/,"").downcase
-    string_as_array = no_spaces_string.split("")
-    # string_as_array.each do |letter|
-    #               letter_count[letter.to_sym] += 1
-    #             end
-    letter_count_array = string_as_array.uniq.map {|letter| [letter.to_sym, string_as_array.count(letter)]}
-    sorted = letter_count_array.sort_by { |pair| pair[1]}.reverse
-    letter_count_hash = Hash[sorted]
-    return letter_count_hash
+    Hash[letter_count_array(string)]
+  end
 
+  def self.clean_string(string)
+    string.gsub(/\W/,"").downcase
+  end
 
+  def self.letter_count_array(string)
+    string_as_array = clean_string(string).split("")
+    count_array = string_as_array.uniq.map {|letter| [letter.to_sym, string_as_array.count(letter)]}
+    count_array.sort_by { |pair| pair[1]}.reverse
   end
 end
 # In a separate file, create a Ruby class. The class should have 2 methods, one that accepts a string as a param, and returns a hash.
