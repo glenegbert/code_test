@@ -25,3 +25,5 @@ function validateForm() {
   }
 
 }
+
+exports.validateForm = validateForm;
