@@ -119,7 +119,7 @@ header nav a.login { font-size:13px; font-weight:700;}
 header nav a:hover{color:#333;}
 header nav .teacherLogin { float:right; }
 
-div.inner{width:978px;margin:0 auto;text-align:left;}
+div.inner{width:978px;margin:0 0;text-align:left;}
 
 div.clear_fix{clear:both;}
 div.clear_fix:after { clear:both; content:"."; display:block; height:0; visibility:hidden; }
@@ -182,12 +182,12 @@ a.drk_gry_rnd_btn { text-decoration:none; cursor:pointer;}
 .ie9 .home *.drk_gry_rnd_btn, .ie9 #fixed_nav *.drk_gry_rnd_btn {background:#eaa443; border:2px solid rgba(31, 37, 22, .7);}
 #home *.drk_gry_rnd_btn:hover { color:#f3f3f3; }
 
-*.med_gry_rnd_btn{height:37px;background:url(//www.masteryconnect.com/learn-more/im/medium_grey_rounded_button_left.png) no-repeat top left;display:block;padding-left:21px;font-size:12px;font-style:normal;line-height:37px;font-weight:700;text-transform:uppercase;color:#333;text-decoration:none;text-shadow:0 1px 0 #fff;transition:color 0.3s;-webkit-transition:color 0.3s;margin:25px 45px 0 0;}
+*.med_gry_rnd_btn{height:37px;background:url(//www.masteryconnect.com/learn-more/im/medium_grey_rounded_button_left.png) no-repeat top left;display:block;padding-left:21px;font-size:12px;font-style:normal;line-height:37px;font-weight:700;text-transform:uppercase;color:#333;text-decoration:none;text-shadow:0 1px 0 #fff;transition:color 0.3s;-webkit-transition:color 0.3s;border-radius: 26px;margin:25px 45px 0 0;}
 *.med_gry_rnd_btn span{height:37px;display:block;background:url(//www.masteryconnect.com/learn-more/im/medium_grey_rounded_button_right.png) no-repeat top right;padding:0 40px 0 19px;}
 *.med_gry_rnd_btn:hover{color:#111; text-decoration:none;}
 a.med_gry_rnd_btn { text-decoration:none; cursor:pointer;}
 
-*.lte_gry_rnd_btn{height:33px;background:url(//www.masteryconnect.com/learn-more/im/grey_rounded_button_left.png) no-repeat top left;display:block;padding-left:18px;font-size:12px;font-style:normal;line-height:33px;font-weight:700;text-transform:uppercase;color:#555;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;float:left;}
+*.lte_gry_rnd_btn{height:33px;background:url(//www.masteryconnect.com/learn-more/im/grey_rounded_button_left.png) no-repeat top left;display:block;padding-left:18px;padding-right:18px;font-size:12px;font-style:normal;line-height:33px;font-weight:700;text-transform:uppercase;color:#555;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;float:left;border-radius: 26px}
 *.lte_gry_rnd_btn span{height:33px;display:block;background:url(//www.masteryconnect.com/learn-more/im/grey_rounded_button_right.png) no-repeat top right;padding:0 30px 0 11px;}
 *.lte_grn_rnd_btn{height:60px;text-decoration:none;background:url(//www.masteryconnect.com/learn-more/im/green_rounded_button_left.png) no-repeat top left;display:block;padding-left:31px;font-size:15px;font-style:normal;line-height:60px;font-weight:700;text-transform:uppercase;color:#fff;text-decoration:none;transition:color 0.3s;-webkit-transition:color 0.3s;float:left;text-shadow: 0 1px 1px rgba(0,0,0,.4);}
 *.lte_grn_rnd_btn:hover { text-decoration:none;}
@@ -286,4 +286,42 @@ section#request_form {
 	width: 80%;
 	margin: 100px auto;
 
+}
+
+section#request_form div.inner fieldset.col-a {
+		width: 375px;
+		float:left;
+	}
+
+section#request_form div.inner fieldset.col-b {
+		width: 400px;
+	}
+
+section#request_form fieldset label span.label {
+	width: 147px;
+	line-height: 30px;
+	font-size: 14px;
+	font-weight: 600;
+	float: left;
+	display: block;
+}
+
+element.style {
+}
+
+section#request_form fieldset label {
+	width: 100%;
+	margin: 5px 0;
+	padding: 0;
+	float: left;
+	clear: both;
+}
+
+section#request_form fieldset i {
+	color: #66FF33;
+}
+
+section#request_form textarea {
+width: 251px;
+height: 145px;
 }

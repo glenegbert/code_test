@@ -73,19 +73,27 @@
     <h2>Contact Us</h2>
   </div>
 </section>
-<section id="request_form" class = "form_area">
+<section id="request_form">
   <h3 class = "caps"> Have Questions? </h3>
-  <h4> Please give us some details, and our support team will reach out </h4>
+  <h4> Please give us some details, and our support team will reach out. </h4>
   <div class="inner">
-
     <form name="contact_form">
-      First Name* <input type="text" name="fname">
-      Last Name* <input type="text" name="lname">
-      Phone* <input type="text" name="phone">
-      Email* <input type="text" name="email">
-      <label><span class="label">Your Message<i>*</i></span><textarea class="message" name="data[message]"></textarea></label>
-      <input type="submit" value="Submit">
-  </form>
+      <fieldset class="col-a">
+        <label> <span class="label">First Name<i>*</i></span><input type="text" name="fname"></label>
+        <label> <span class="label">Last Name<i>*</i></span><input type="text" name="lname"></label>
+        <label> <span class="label">Phone </span><input type="phone" name="phone"></label>
+        <label> <span class="label">Email <i>*</i></span><input type="text" name="email"></label>
+      </fieldset>
+      <fieldset class="col-b">
+        <label><span class="label">Your Message<i>*</i></span><textarea class="message" name="data[message]"></textarea></label>
+      </fieldset>
+      <fieldset>
+      </fieldset>
+    </form>
+    <button class="lte_gry_rnd_btn right">Submit</button>
+
+
+
   </div>
 </section>
 <footer id="footer_nav">
